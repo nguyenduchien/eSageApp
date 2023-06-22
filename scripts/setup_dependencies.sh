@@ -203,6 +203,12 @@ else
   checkVersion ${current_ver} ${latest_ver} "Cocoapods" 119 16
 fi
 
+# install mergepbx
+if ! isExist mergepbx; then
+  sectionEcho "Installing mergepbx - A Tool to Automatically Merge Changes in Your XCode Project Files" 27 231
+  ./scripts/setup_mergepbx.sh 
+fi
+
 sectionEcho "Success!" 119 16
 
 # send a notification on finish via Applescript
