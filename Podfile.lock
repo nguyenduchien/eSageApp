@@ -1,0 +1,34 @@
+PODS:
+  - AppsFlyerFramework (6.5.3):
+    - AppsFlyerFramework/Main (= 6.5.3)
+  - AppsFlyerFramework/Main (6.5.3)
+  - Kingfisher (7.3.2)
+  - lottie-ios (3.5.0)
+  - SwiftGen (6.6.2)
+  - SwiftLint (0.50.3)
+
+DEPENDENCIES:
+  - AppsFlyerFramework (= 6.5.3)
+  - Kingfisher (= 7.3.2)
+  - lottie-ios (= 3.5.0)
+  - SwiftGen (~> 6.0)
+  - SwiftLint
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - AppsFlyerFramework
+    - Kingfisher
+    - lottie-ios
+    - SwiftGen
+    - SwiftLint
+
+SPEC CHECKSUMS:
+  AppsFlyerFramework: daff1a8ac502cef2c9408794bac68c852e3483d4
+  Kingfisher: 0086ad83719761ba9b2cdaf6ef4d5b4878cbae23
+  lottie-ios: c55158d67d0629a260625cc2ded2052b829e3c3e
+  SwiftGen: 1366a7f71aeef49954ca5a63ba4bef6b0f24138c
+  SwiftLint: 77f7cb2b9bb81ab4a12fcc86448ba3f11afa50c6
+
+PODFILE CHECKSUM: 0f300a593af43ef6cf33be22c04899c3a25b8869
+
+COCOAPODS: 1.11.3
