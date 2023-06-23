@@ -118,6 +118,12 @@ else
   sectionEcho "Configuring for Intel-based Mac" 27 231
 fi
 
+# install xcodegen
+
+if ! isExist xcodegen; then
+  sectionEcho "Installing Xcodegen..." 27 231
+  brew install xcodegen
+fi
 
 # install rbenv
 #
@@ -181,6 +187,9 @@ if isAppleSilicon; then
   brew install cocoapods 
 fi
 
+# build project
+sectionEcho "Building project with xcodegen..." 123 16
+xcodegen --spec ./eSageApp/project_local.yml --project ./App
 
 # execute pod install
 sectionEcho "Running pod install..." 75 16
