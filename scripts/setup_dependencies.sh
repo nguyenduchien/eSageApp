@@ -189,7 +189,7 @@ fi
 
 # build project
 sectionEcho "Building project with xcodegen..." 123 16
-xcodegen --spec ./eSageApp/project_local.yml --project ./App
+xcodegen --spec ./eSageApp/project_local.yml --project ./eSageApp
 
 # execute pod install
 sectionEcho "Running pod install..." 75 16
@@ -217,6 +217,9 @@ if ! isExist mergepbx; then
   sectionEcho "Installing mergepbx - A Tool to Automatically Merge Changes in Your XCode Project Files" 27 231
   ./scripts/setup_mergepbx.sh 
 fi
+
+sectionEcho "Creating symlinked githooks..." 99 231
+  ./scripts/gitHooksSetup.sh
 
 sectionEcho "Success!" 119 16
 

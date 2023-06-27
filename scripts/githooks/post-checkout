@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# Rebuild the project via Xcodegen (if necesssary)
+# This step uses `use-cache` which will skip building the project file (and the following `bundle exec pod install`)
+# if there are no changes to the project.
+# Run this without `use-cache` to force a rebuild, if needed.
+xcodegen --use-cache --spec ./eSageApp/project_local.yml --project ./eSageApp
