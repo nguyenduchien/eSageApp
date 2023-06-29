@@ -1,9 +1,10 @@
-
 input_dir: eSageApp/App/Resources
 output_dir: eSageApp/App/Resources/Generated/
 
 xcassets:
-  inputs: Assets.xcassets
+  inputs:
+    - Assets.xcassets
+    - Colors.xcassets
   outputs:
     - templateName: swift5
       output: XCAssets+Generated.swift
@@ -12,5 +13,16 @@ xcassets:
 strings:
   paths:
     - eSageApp/App/Resources/en.lproj/Localizable.strings
-  templateName: structured-swift4
-  output: L10n+Generated.swift
+  templateName: structured-swift5
+  param:
+    publicAccess: true
+    enumName: Strings
+  output: Strings+Generated.swift
+
+
+fonts:
+  inputs:
+    - Resources/Fonts
+  outputs:
+    templatePath: structured-swift5
+    output: Fonts+Generated.swift
