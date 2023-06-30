@@ -14,6 +14,7 @@ opt_in_rules:
   - overridden_super_call
   - prohibited_super_call
   - redundant_nil_coalescing
+  - vertical_parameter_alignment_on_call
 disabled_rules:
   - todo
   - unused_optional_binding
@@ -23,18 +24,25 @@ disabled_rules:
   - valid_ibinspectable
   - nesting
   - identifier_name
+  - large_tuple
+  - xctfail_message
+  - unused_closure_parameter
+  - inclusive_language
+  - empty_enum_arguments
+  - discarded_notification_center_observer
 excluded:
   - PrivatePods
   - Pods
-  - vendor
+  - Vendor
+  - Carthage
 cyclomatic_complexity:
   warning: 18
 line_length: 250
 file_length: 1050
 force_unwrapping: error
 function_parameter_count:
-  - 6
-  - 8
+  - 10
+  - 15
 function_body_length:
   - 80
   - 100
@@ -43,9 +51,9 @@ type_body_length:
   - 500
 type_name:
   min_length:
-    warning: 2
+    warning: 3
   max_length:
-    warning: 40
+    warning: 60
     error: 60
 identifier_name:
   min_length:
@@ -129,4 +137,12 @@ custom_rules:
     name: "Query String"
     regex: ( [=!><]+ \\\(.*\))
     message: "Donot use the string interpolation syntax for query string. "
+    severity: warning
+  use_if_let_shadowing:
+    name: "Use short if/guard let/var from Swift 5.7"
+    regex: "(if|guard)\\s+(let|var)\\s+(\\w*)\\s*=\\s*\\3([\\s,])(?!as)"
+    severity: warning
+  use_safeRange:
+    name: "Use safeRange instead of range(of:"
+    regex: '\.range\(of:'
     severity: warning
