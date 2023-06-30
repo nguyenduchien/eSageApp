@@ -64,6 +64,7 @@
 		F88E5A5B29E3F3E70026170F /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88E5A2029E3F3E70026170F /* LocationManager.swift */; };
 		F88E5A5C29E3F3E70026170F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88E5A2129E3F3E70026170F /* AppDelegate.swift */; };
 		F88E5A6129E406010026170F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88E5A6029E406010026170F /* SceneDelegate.swift */; };
+		F8D8908C2A4EC734001A7BD2 /* XCAssets+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D8908B2A4EC734001A7BD2 /* XCAssets+Generated.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -129,6 +130,7 @@
 		F88E5A2329E3F3E70026170F /* eSageApp.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = eSageApp.entitlements; sourceTree = "<group>"; };
 		F88E5A5F29E401520026170F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F88E5A6029E406010026170F /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		F8D8908B2A4EC734001A7BD2 /* XCAssets+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCAssets+Generated.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,6 +200,7 @@
 		F88E59DC29E3F3E60026170F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F8D8908A2A4EC734001A7BD2 /* Generated */,
 				F88E59DD29E3F3E60026170F /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -380,6 +383,14 @@
 			path = SupportingFiles;
 			sourceTree = "<group>";
 		};
+		F8D8908A2A4EC734001A7BD2 /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				F8D8908B2A4EC734001A7BD2 /* XCAssets+Generated.swift */,
+			);
+			path = Generated;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -541,6 +552,7 @@
 				F88E5A2929E3F3E70026170F /* App.DeviceType.swift in Sources */,
 				F88E5A3829E3F3E70026170F /* DetectLabel.swift in Sources */,
 				F88E5A4029E3F3E70026170F /* ContainerDialogSheet.swift in Sources */,
+				F8D8908C2A4EC734001A7BD2 /* XCAssets+Generated.swift in Sources */,
 				F88E5A2D29E3F3E70026170F /* Regression.swift in Sources */,
 				F88E5A6129E406010026170F /* SceneDelegate.swift in Sources */,
 				F88E5A4329E3F3E70026170F /* ToastHUD.swift in Sources */,
