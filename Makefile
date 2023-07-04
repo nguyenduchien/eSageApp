@@ -5,3 +5,7 @@ setup:
 # make scan
 scan:
 	./scripts/scan_use_periphery.sh
+
+# make lint
+lint:
+	./scripts/lint.sh
