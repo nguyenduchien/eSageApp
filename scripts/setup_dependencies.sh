@@ -166,6 +166,12 @@ elif isExist rbenv; then
   reloadShellConfig
 fi
 
+# install swiftlint
+if ! isExist swiftlint; then
+  sectionEcho "Installing swiftlint..." 171 231
+  brew install swiftlint 
+fi
+
 # install bundler
 if ! isExist bundle; then
   sectionEcho "Installing bundler..." 207 231
