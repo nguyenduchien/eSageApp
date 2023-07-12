@@ -29,7 +29,7 @@ platform :ios do
     tag_name = ""
     codeSign = "iPhone Distribution"
   
-    GITHUB_REPO_NAME = "nguyenduchien/eSage"
+    GITHUB_REPO_NAME = "nguyenduchien/eSageApp"
     VERSION_PATTERN = /((\d+\.)(\d+\.)(\*|\d+))/
 
 
@@ -59,6 +59,37 @@ platform :ios do
                     bundleId => provisioningProfile
                 }
             }
+        )
+    end
+
+    private_lane :update_provisioning_specifier do
+      update_provisioning_profile_specifier(
+        new_specifier: provisioningProfile,
+        xcodeproj: projectPath,
+        configuration: configuration,
+        target: "eSageApp"
+      )
+  end
+
+    private_lane :update_build_version do
+        buildtime = Time.now.strftime("%m-%d %H-%M")
+    
+        appVersion = get_version_number(
+          xcodeproj: projectPath,
+          configuration: configuration,
+          target: "eSageApp"
+        )
+        versions = appVersion.split(".")
+        versions.pop()
+        fixedVersions = versions.push(buildtime)
+        fixedBuildVersion = fixedVersions.join(".")
+    
+        update_info_plist(
+          xcodeproj: projectPath,
+          plist_path: plistPath,
+          block: lambda { |plist|
+            plist["CFBundleVersion"] = fixedBuildVersion
+          }
         )
     end
 end
