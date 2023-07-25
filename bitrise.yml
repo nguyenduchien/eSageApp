@@ -3,18 +3,30 @@ default_step_lib_source: https://github.com/bitrise-io/bitrise-steplib.git
 project_type: ios
 trigger_map: []
 workflows:
-  deploy:
-    description: |
-      The workflow tests, builds and deploys the app using *Deploy to bitrise.io* step.
-
-      For testing the *retry_on_failure* test repetition mode is enabled.
-
-      Next steps:
-      - Set up [Connecting to an Apple service with API key](https://devcenter.bitrise.io/en/accounts/connecting-to-services/connecting-to-an-apple-service-with-api-key.html##).
-      - Or further customise code signing following our [iOS code signing](https://devcenter.bitrise.io/en/code-signing/ios-code-signing.html) guide.
+  _initial_setup:
     steps:
-    - activate-ssh-key@4: {}
+    - activate-ssh-key@4.0.3:  {}
+        run_if: '{{getenv "SSH_RSA_PRIVATE_KEY" | ne ""}}'
+    - script@1:
+        inputs:
+        - content: |-
+            if [[ -n "$BITRISE_GIT_COMMIT" && -n "$BITRISE_GIT_TAG" ]]; then
+                echo "Reset BITRISE_GIT_COMMIT to empty"
+                envman add --key GIT_COMMIT --value ""
+            elif [[ -n "$BITRISE_GIT_COMMIT" ]]; then
+                echo "Use BITRISE_GIT_COMMIT"
+                envman add --key GIT_COMMIT --value $BITRISE_GIT_COMMIT
+            else
+                echo "Use empty commit"
+                envman add --key GIT_COMMIT --value ""
+            fi
+        opts:
+          is_template: true
     - git-clone@8: {}
+        inputs:
+        - commit: "$GIT_COMMIT"
+        - clone_depth: '10'
+    - certificate-and-profile-installer@1.10.1: {}
     - xcode-archive@4:
         inputs:
         - project_path: $BITRISE_PROJECT_PATH
@@ -22,10 +34,20 @@ workflows:
         - distribution_method: $BITRISE_DISTRIBUTION_METHOD
         - automatic_code_signing: api-key
         - cache_level: none
-    - deploy-to-bitrise-io@2: {}
-meta:
-  bitrise.io:
-    stack: osx-xcode-14.2.x-ventura
+  _setup_dependencies:
+    steps:
+    - cocoapods-install@1.10.0: {}
+  _save_cache:
+    steps:
+    - cache-push@2.5:
+        inputs:
+        - is_debug_mode: 'true'
+        - compress_archive: 'true'
+        - cache_paths: "./Pods -> ./Podfile.lock"
+        is_always_run: true
+  _load_cache:
+    steps:
+    - cache-pull@2: {}
 app:
   envs:
   - opts:
@@ -36,4 +58,16 @@ app:
     BITRISE_SCHEME: eSageAppStg
   - opts:
       is_expand: false
+    BITRISE_EXPORT_METHOD: ad-hoc
+    - opts:
+      is_expand: false
     BITRISE_DISTRIBUTION_METHOD: ad-hoc
+  # - opts:
+  #     is_expand: false
+  #   QA_SIMULATOR_IDENTITY: platform=iOS Simulator,name=iPhone 8 Plus,OS=14.5
+  - opts:
+      is_expand: false
+    FASTLANE_XCODE_LIST_TIMEOUT: '120'
+meta:
+  bitrise.io:
+    stack: osx-xcode-14.2.x-ventura

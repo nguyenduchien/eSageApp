@@ -1,0 +1,19 @@
+# This is a Xcodegen project setup file for running locally (for example, when switching branches)
+# If differs from the CI-based script in that it runs `bundle exec pod install` command after
+# building the project. This is required for local development.
+#
+# A post-checkout Github build hook should run this automatically but if you are facing problems,
+# you can simply `git checkout` to force this to run. Note that this will use the cache so if there
+# are no changes to the project, nothing will happen.
+#
+# In dire cases, if you want to ignore the cache for debugging, ensure you are in the root directory 
+# of the repository and run:
+# `xcodegen --spec ./eSageApp/project_local.yml --project ./eSageApp`
+
+include:
+  - project_base.yml
+  - path: ./project_base.yml
+    relativePaths: true
+
+options:
+  postGenCommand: bundle exec pod install

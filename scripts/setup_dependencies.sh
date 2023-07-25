@@ -197,9 +197,17 @@ fi
 sectionEcho "Building project with xcodegen..." 123 16
 xcodegen --spec ./eSageApp/project_local.yml --project ./eSageApp
 
+
+
 # execute pod install
 sectionEcho "Running pod install..." 75 16
 bundle exec pod install  || bundle exec pod install --repo-update 
+
+# install mergepbx
+if ! isExist mergepbx; then
+  sectionEcho "Installing mergepbx - A Tool to Automatically Merge Changes in Your XCode Project Files" 27 231
+  ./scripts/setup_mergepbx.sh 
+fi
 
 # check cocoapods version
 
@@ -218,19 +226,13 @@ else
   checkVersion ${current_ver} ${latest_ver} "Cocoapods" 119 16
 fi
 
-# install mergepbx
-if ! isExist mergepbx; then
-  sectionEcho "Installing mergepbx - A Tool to Automatically Merge Changes in Your XCode Project Files" 27 231
-  ./scripts/setup_mergepbx.sh 
-fi
-
-sectionEcho "Creating symlinked githooks..." 99 231
-  ./scripts/gitHooksSetup.sh
+sectionEcho "Creating config githooks..." 99 231
+  git config core.hooksPath "./scripts/githooks"
 
 sectionEcho "Success!" 119 16
 
 # send a notification on finish via Applescript
 if isExist osascript; then
-  osascript -e 'display notification "Đã setup environment xong, run app nào" with title "Very magic"'
+  osascript -e 'display notification "Setup xong rồi đó ku" with title "Nhìn giề"'
 fi
 
