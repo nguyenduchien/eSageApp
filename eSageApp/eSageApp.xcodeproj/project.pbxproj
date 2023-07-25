@@ -29,8 +29,8 @@
 		5326EF9B4AAAE9B896026D48 /* NoSelectTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE460F3572559EDCC799C611 /* NoSelectTextView.swift */; };
 		56C13327F2937DFEBD76ECDC /* appstore.png in Resources */ = {isa = PBXBuildFile; fileRef = EDB6BCF7238282EA4CEA1252 /* appstore.png */; };
 		5F8E50C2D6B404059081E290 /* DetectLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000F29524A9FA35BE16E0C9C /* DetectLabel.swift */; };
-		6370AC2E2D43F0EF887998E5 /* Pods_eSageApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD2BFBF0FA2314EE1DFB07E0 /* Pods_eSageApp.framework */; };
 		66119773F5FCF9A5DA0861F1 /* URL+BaseURLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = B069CBC8A903679275F01738 /* URL+BaseURLs.swift */; };
+		66B38E4C97DCCDCEF9286C7F /* Pods_eSageApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6229ED322BFA505BE4EC0F8 /* Pods_eSageApp.framework */; };
 		691B04C06C5125CFCA35EE41 /* TextAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC373A3A98D0CEC690B297A7 /* TextAttributes.swift */; };
 		70529387D4B81575A08AAC7A /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FDA3CD07EFE3A867A353C8 /* ProgressHUD.swift */; };
 		743C54A7B4F770492A6C442A /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118ABD15573A5AEA45FD09BC /* BaseTabBarController.swift */; };
@@ -73,6 +73,7 @@
 /* Begin PBXFileReference section */
 		000F29524A9FA35BE16E0C9C /* DetectLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectLabel.swift; sourceTree = "<group>"; };
 		02FDA3CD07EFE3A867A353C8 /* ProgressHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
+		0305A4525DAAAA19485EA1B8 /* Pods-eSageApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eSageApp.release.xcconfig"; path = "Target Support Files/Pods-eSageApp/Pods-eSageApp.release.xcconfig"; sourceTree = "<group>"; };
 		0830148A173C0E54E404BE79 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		0DD27A5F449A77C03AE4AD38 /* Measurement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Measurement.swift; sourceTree = "<group>"; };
 		118ABD15573A5AEA45FD09BC /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
@@ -82,6 +83,7 @@
 		1AC7DC2821E896E1B0D0F403 /* BaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		1C75D10C9DC21D405B48A5AE /* ParentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentView.swift; sourceTree = "<group>"; };
 		2EF73F028BCF1B671E9E4758 /* CameraPermissionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPermissionManager.swift; sourceTree = "<group>"; };
+		309AC16E3FCCFA99E07061E0 /* Pods-eSageApp.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eSageApp.staging.xcconfig"; path = "Target Support Files/Pods-eSageApp/Pods-eSageApp.staging.xcconfig"; sourceTree = "<group>"; };
 		3A683CBE69F387FCACABEBE2 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		3CF98CC81665216666639B71 /* GradientLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientLabel.swift; sourceTree = "<group>"; };
 		445FAA0095E66EECBA6A2B64 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -106,9 +108,8 @@
 		9A902D27A999BC290A2D6939 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		9DFCBBDD65639DB21A4443AC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		A21FCE29FBD07DC762A62CB7 /* XCAssets+Generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCAssets+Generated.swift"; sourceTree = "<group>"; };
-		A8D7320F57F7B23696B13601 /* Pods-eSageApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eSageApp.debug.xcconfig"; path = "Target Support Files/Pods-eSageApp/Pods-eSageApp.debug.xcconfig"; sourceTree = "<group>"; };
+		A6229ED322BFA505BE4EC0F8 /* Pods_eSageApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_eSageApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADB30AE6BE1172109D06D757 /* eSageApp-Debug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "eSageApp-Debug.entitlements"; sourceTree = "<group>"; };
-		AFE877EAAB099B9530C04F60 /* Pods-eSageApp.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eSageApp.staging.xcconfig"; path = "Target Support Files/Pods-eSageApp/Pods-eSageApp.staging.xcconfig"; sourceTree = "<group>"; };
 		B06711C19AE3D60A3446964A /* AppManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppManager.swift; sourceTree = "<group>"; };
 		B069CBC8A903679275F01738 /* URL+BaseURLs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+BaseURLs.swift"; sourceTree = "<group>"; };
 		B1FA4147711D17439CFBE92B /* App.Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.Fonts.swift; sourceTree = "<group>"; };
@@ -120,7 +121,6 @@
 		C604189598C487CDC369C1CD /* App.DeviceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.DeviceType.swift; sourceTree = "<group>"; };
 		C671A92FE1F3283B3FFF7517 /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		C9A2915602408811DFC85A3A /* RadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
-		DD2BFBF0FA2314EE1DFB07E0 /* Pods_eSageApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_eSageApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD9EAD2CA536B302D286060A /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		DF996380907F6EBC71955B9D /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
 		E04A70ACCA1C8F69CBAD738D /* App.Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.Color.swift; sourceTree = "<group>"; };
@@ -135,7 +135,6 @@
 		F1A0CE337711AA2A1160B774 /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
 		F21A29CE63FAB2B011D078B6 /* CheckBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxView.swift; sourceTree = "<group>"; };
 		F28F7C50694C9603B05B9272 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		F494374C006657C089157E89 /* Pods-eSageApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eSageApp.release.xcconfig"; path = "Target Support Files/Pods-eSageApp/Pods-eSageApp.release.xcconfig"; sourceTree = "<group>"; };
 		F6E610E250F469D303973E17 /* ContainerDialogSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerDialogSheet.swift; sourceTree = "<group>"; };
 		F8664460DABC189CAA51626D /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		F97F23F32E585BCBFBFF9440 /* PaddingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingTextField.swift; sourceTree = "<group>"; };
@@ -143,14 +142,15 @@
 		FBDABF82617688DE346D1F0E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FC373A3A98D0CEC690B297A7 /* TextAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAttributes.swift; sourceTree = "<group>"; };
 		FECC5095B9B780709A3FA189 /* TriangleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriangleView.swift; sourceTree = "<group>"; };
+		FF6577006E8E5AB73FE5C05E /* Pods-eSageApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eSageApp.debug.xcconfig"; path = "Target Support Files/Pods-eSageApp/Pods-eSageApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		A531131774350C9016A7B742 /* Frameworks */ = {
+		B099C8B79BF7B0038D9EBE06 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6370AC2E2D43F0EF887998E5 /* Pods_eSageApp.framework in Frameworks */,
+				66B38E4C97DCCDCEF9286C7F /* Pods_eSageApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -211,33 +211,14 @@
 			path = Button;
 			sourceTree = "<group>";
 		};
-		22CF96150FFAB5846EF46E6B /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				A8D7320F57F7B23696B13601 /* Pods-eSageApp.debug.xcconfig */,
-				F494374C006657C089157E89 /* Pods-eSageApp.release.xcconfig */,
-				AFE877EAAB099B9530C04F60 /* Pods-eSageApp.staging.xcconfig */,
-			);
-			name = Pods;
-			path = ../Pods;
-			sourceTree = "<group>";
-		};
-		2EDA7FFB9FFD98D0DC559875 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				DD2BFBF0FA2314EE1DFB07E0 /* Pods_eSageApp.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		35603668139026046DC028D3 = {
 			isa = PBXGroup;
 			children = (
 				95B6ACA41C769DEAD3E80F67 /* App */,
 				8139966DF03796C934EB9FC8 /* xcconfig */,
 				4F802D7B0092667815602DD7 /* Products */,
-				22CF96150FFAB5846EF46E6B /* Pods */,
-				2EDA7FFB9FFD98D0DC559875 /* Frameworks */,
+				D024FEE60DDBBF97FDF0D737 /* Pods */,
+				473F1FEC8634D2597CCDE5D4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -247,6 +228,14 @@
 				A21FCE29FBD07DC762A62CB7 /* XCAssets+Generated.swift */,
 			);
 			path = Generated;
+			sourceTree = "<group>";
+		};
+		473F1FEC8634D2597CCDE5D4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A6229ED322BFA505BE4EC0F8 /* Pods_eSageApp.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		4F802D7B0092667815602DD7 /* Products */ = {
@@ -364,6 +353,17 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
+		D024FEE60DDBBF97FDF0D737 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FF6577006E8E5AB73FE5C05E /* Pods-eSageApp.debug.xcconfig */,
+				0305A4525DAAAA19485EA1B8 /* Pods-eSageApp.release.xcconfig */,
+				309AC16E3FCCFA99E07061E0 /* Pods-eSageApp.staging.xcconfig */,
+			);
+			name = Pods;
+			path = ../Pods;
+			sourceTree = "<group>";
+		};
 		DB68055B419B4AB73D4D4C83 /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
@@ -426,13 +426,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 94BC9F72AD92BECE5EAEF01B /* Build configuration list for PBXNativeTarget "eSageApp" */;
 			buildPhases = (
-				F55F9B682E50B0966E30C8B3 /* [CP] Check Pods Manifest.lock */,
+				A06D130BA1D00672AB3A5FF7 /* [CP] Check Pods Manifest.lock */,
 				C47A881ED3DF770BA798D515 /* SwiftGen Run Script */,
 				D3034999138366CF1A2AD394 /* SwiftLint Run Script */,
 				B5C5D485CF47349A545DC56D /* Sources */,
 				08A2ADF94EAD8F713CDF81DA /* Resources */,
-				A531131774350C9016A7B742 /* Frameworks */,
-				40A89718C66919DC2E4A340D /* [CP] Embed Pods Frameworks */,
+				B099C8B79BF7B0038D9EBE06 /* Frameworks */,
+				CDBE03FD932F5D6DC8DC5BF8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -493,61 +493,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		40A89718C66919DC2E4A340D /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-eSageApp/Pods-eSageApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-eSageApp/Pods-eSageApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-eSageApp/Pods-eSageApp-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C47A881ED3DF770BA798D515 /* SwiftGen Run Script */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "SwiftGen Run Script";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# https://github.com/SwiftGen/SwiftGen\n\nif [[ -f \"${PODS_ROOT}/SwiftGen/bin/swiftgen\" ]]; then\n  \"${PODS_ROOT}/SwiftGen/bin/swiftgen\" config run --config \"$SRCROOT/../SwiftGen.yml\"\nelse\n  echo \"warning: SwiftGen is not installed. Run 'pod install --repo-update' to install it.\"\nfi\n";
-		};
-		D3034999138366CF1A2AD394 /* SwiftLint Run Script */ = {
-			isa = PBXShellScriptBuildPhase;
-			alwaysOutOfDate = 1;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "SwiftLint Run Script";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if test -d /opt/homebrew/bin; then\n  PATH=/opt/homebrew/bin/:$PATH\nfi\n\nif [ ${CONFIGURATION} == \"Release\" ]; then\necho \"Skip SwiftLint\"\nexit 0\nfi\n\nif which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"SwiftLint does not exist, download from https://github.com/realm/SwiftLint\"\nfi\n";
-		};
-		F55F9B682E50B0966E30C8B3 /* [CP] Check Pods Manifest.lock */ = {
+		A06D130BA1D00672AB3A5FF7 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -568,6 +514,60 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
+		};
+		C47A881ED3DF770BA798D515 /* SwiftGen Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "SwiftGen Run Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# https://github.com/SwiftGen/SwiftGen\n\nif [[ -f \"${PODS_ROOT}/SwiftGen/bin/swiftgen\" ]]; then\n  \"${PODS_ROOT}/SwiftGen/bin/swiftgen\" config run --config \"$SRCROOT/../SwiftGen.yml\"\nelse\n  echo \"warning: SwiftGen is not installed. Run 'pod install --repo-update' to install it.\"\nfi\n";
+		};
+		CDBE03FD932F5D6DC8DC5BF8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-eSageApp/Pods-eSageApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-eSageApp/Pods-eSageApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-eSageApp/Pods-eSageApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D3034999138366CF1A2AD394 /* SwiftLint Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "SwiftLint Run Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if test -d /opt/homebrew/bin; then\n  PATH=/opt/homebrew/bin/:$PATH\nfi\n\nif [ ${CONFIGURATION} == \"Release\" ]; then\necho \"Skip SwiftLint\"\nexit 0\nfi\n\nif which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"SwiftLint does not exist, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -762,7 +762,7 @@
 		};
 		6F9397BB5634DBD6D47EBBAA /* Staging */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AFE877EAAB099B9530C04F60 /* Pods-eSageApp.staging.xcconfig */;
+			baseConfigurationReference = 309AC16E3FCCFA99E07061E0 /* Pods-eSageApp.staging.xcconfig */;
 			buildSettings = {
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				INFOPLIST_FILE = App/SupportingFiles/Info.plist;
@@ -774,7 +774,7 @@
 		};
 		774BC0313E6491B5783F1F1C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A8D7320F57F7B23696B13601 /* Pods-eSageApp.debug.xcconfig */;
+			baseConfigurationReference = FF6577006E8E5AB73FE5C05E /* Pods-eSageApp.debug.xcconfig */;
 			buildSettings = {
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				INFOPLIST_FILE = App/SupportingFiles/Info.plist;
@@ -840,7 +840,7 @@
 		};
 		A54575814A769DE7D5DD0628 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F494374C006657C089157E89 /* Pods-eSageApp.release.xcconfig */;
+			baseConfigurationReference = 0305A4525DAAAA19485EA1B8 /* Pods-eSageApp.release.xcconfig */;
 			buildSettings = {
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				INFOPLIST_FILE = App/SupportingFiles/Info.plist;
