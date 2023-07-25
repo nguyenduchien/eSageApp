@@ -1,0 +1,9 @@
+# This is a Xcodegen project setup file for building the project via Bitrise CI.
+# If differs from the local script in that it does *not* runs `bundle exec pod install` after
+# building the project. Bitrise will do this itself in a separate "step" so there is no need
+# to do it here also.
+
+include:
+  - project_base.yml
+  - path: ./project_base.yml
+    relativePaths: true

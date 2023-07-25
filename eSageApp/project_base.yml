@@ -1,0 +1,117 @@
+# This is the base Xcodegen project definition file and it is the base place to modify the project file.
+# The `project_local.yml` and `project_ci.yml` files extend this project to perform environment-specific
+# additional commands.
+#
+# When changing this file, please refer to the Xcodegen docs here: https://github.com/yonaskolb/XcodeGen/blob/master/Docs/.
+# They are fairly extensive but things can be tricky at times.
+#
+# One tip is to simply edit your build settings in Xcode, then use the "Edit -> Show Setting Names" menu to
+# display the appropriate build setting key and then paste in the appropriate values to this definitioni file.
+
+name: eSageApp
+
+configs:
+  Debug: debug
+  Staging: release
+  Release: release
+
+configFiles:
+  Debug: ./xcconfig/eSageApp-Debug.xcconfig
+  Staging: ./xcconfig/eSageApp-Staging.xcconfig
+  Release: ./xcconfig/eSageApp-Release.xcconfig
+
+settings:
+  IPHONEOS_DEPLOYMENT_TARGET: "13.0"
+
+schemes:
+
+  # eSageAppStaging Scheme
+  eSageAppDebug:
+    build:
+      targets:
+        eSageApp: all
+    run:
+      config: Debug
+      environmentVariables:
+        OS_ACTIVITY_MODE: disable
+      # commandLineArguments:
+      #   "-FIRDebugDisabled": true
+      simulateLocation:
+        allow: true
+        defaultLocation: "Hanoi, Vietnam"
+    test:
+      config: Debug
+    profile:
+      config: Debug
+    analyze:
+      config: Debug
+    archive:
+      config: Debug
+  
+  # eSageAppStaging Scheme
+  eSageAppStg:
+    build:
+      targets:
+        eSageApp: all
+    run:
+      config: Staging
+      # environmentVariables:
+      #   OS_ACTIVITY_MODE: disable
+      # commandLineArguments:
+      #   "-FIRDebugDisabled": true
+      # simulateLocation:
+      #   allow: true
+      #   defaultLocation: "Hanoi, Vietnam"
+    test:
+      config: Staging
+    profile:
+      config: Staging
+    analyze:
+      config: Staging
+    archive:
+      config: Staging
+
+  # eSageAppRelease Scheme
+  eSageAppRelease:
+    build:
+      targets:
+        eSageApp: all
+    run:
+      config: Release
+    test:
+      config: Release
+    analyze:
+      config: Release
+
+# Base targets. These are the targets displayed when selecting the `PaypayApp` project in the main application workspace.
+targets:
+
+  # Main App
+  eSageApp:
+    type: application
+    platform: iOS
+
+    sources:
+      - path: App
+        excludes:
+          - "**/*.sh"
+          - "**/*.a"
+
+    settings:
+      SWIFT_VERSION: "5.0"
+      EXCLUDED_ARCHS[sdk=iphonesimulator*]: arm64
+      # LIBRARY_SEARCH_PATHS: 
+      #   - $(inherited)
+      PRODUCT_BUNDLE_IDENTIFIER: hiennguyen.eSageApp
+
+    preBuildScripts:
+      - path: ./xcodegen/build_phase_scripts/swiftgen.sh
+        name: SwiftGen Run Script
+      - path: ./xcodegen/build_phase_scripts/swiftlint.sh
+        name: SwiftLint Run Script
+        basedOnDependencyAnalysis: false
+
+    # postBuildScripts:
+    #   - path: ./xcodegen/build_phase_scripts/scan_report_unused_code.sh
+    #     name: Report Unused Code
+

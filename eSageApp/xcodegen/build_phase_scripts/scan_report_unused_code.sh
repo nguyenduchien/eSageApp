@@ -12,7 +12,7 @@ report_file="$SRCROOT/../unused_code_report.log"
 
 if which periphery >/dev/null; then
   periphery clear-cache
-  periphery scan --workspace "../eSage.xcworkspace" --schemes "eSageAppStg" --targets "eSageApp" --format xcode --clean-build 2>&1 | tee -a $report_file
+  periphery scan --workspace "../eSage.xcworkspace" --schemes "eSageAppDebug" --targets "eSageApp" --format xcode --clean-build 2>&1 | tee -a $report_file
 else
   echo "Periphery does not exist, download from https://github.com/peripheryapp/periphery"
 fi
