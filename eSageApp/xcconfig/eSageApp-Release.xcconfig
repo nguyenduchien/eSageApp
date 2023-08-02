@@ -43,7 +43,7 @@ OTHER_SWIFT_FLAGS = $(inherited)
 // error. Use in conjunction with [DEVELOPMENT_TEAM] to fully specify provisioning
 // profile.
 
-PROVISIONING_PROFILE_SPECIFIER = Release Profile
+PROVISIONING_PROFILE_SPECIFIER = match Appstore hiennguyen.eSageApp
 
 
 

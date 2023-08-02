@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -90,7 +90,7 @@
 		44F08DBEEE649570AD5516DA /* Int+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extensions.swift"; sourceTree = "<group>"; };
 		4EFA0AC3DD84ABADDDF43503 /* UIScreen+ScreenSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScreen+ScreenSize.swift"; sourceTree = "<group>"; };
 		4F7FA604A822B30A91D29747 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
-		50399827E3D99F25B7FA738B /* eSageApp.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = eSageApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		50399827E3D99F25B7FA738B /* eSageApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = eSageApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5550214C7C336D7D9FE01A94 /* BiometricsAuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricsAuthenticationManager.swift; sourceTree = "<group>"; };
 		582FD5FD82739CA005C626E4 /* DisableCopyPasteTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisableCopyPasteTextField.swift; sourceTree = "<group>"; };
 		5C007DAF4FE7600C54AC3B7C /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -449,7 +449,7 @@
 		EB0EC5EB2020E0227CFCF008 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1200;
+				LastUpgradeCheck = 1420;
 				TargetAttributes = {
 					5ECD24C35C1D18325619AE69 = {
 						DevelopmentTeam = LQQPYJBXWS;
@@ -653,6 +653,7 @@
 			baseConfigurationReference = E3167BBD0C899836352DFD3B /* eSageApp-Staging.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -706,6 +707,7 @@
 			baseConfigurationReference = 6B82F21DAA3D9887BCB60EAF /* eSageApp-Debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -776,9 +778,11 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FF6577006E8E5AB73FE5C05E /* Pods-eSageApp.debug.xcconfig */;
 			buildSettings = {
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = LQQPYJBXWS;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				INFOPLIST_FILE = App/SupportingFiles/Info.plist;
 				PRODUCT_BUNDLE_IDENTIFIER = hiennguyen.eSageApp;
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "match Development hiennguyen.eSageApp";
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
 			};
@@ -789,6 +793,7 @@
 			baseConfigurationReference = 6A55ABF957B40E6505DC27D6 /* eSageApp-Release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -842,9 +847,11 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0305A4525DAAAA19485EA1B8 /* Pods-eSageApp.release.xcconfig */;
 			buildSettings = {
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = LQQPYJBXWS;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				INFOPLIST_FILE = App/SupportingFiles/Info.plist;
 				PRODUCT_BUNDLE_IDENTIFIER = hiennguyen.eSageApp;
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "match AppStore hiennguyen.eSageApp";
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
 			};
