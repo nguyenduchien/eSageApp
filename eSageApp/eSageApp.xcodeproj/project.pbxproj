@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 54;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -21,6 +21,7 @@
 		2CDCA61320948BB9009A6220 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 844F94068E20FD3FBF5CFC32 /* Assets.xcassets */; };
 		321B126F23637DBF06E2F174 /* App.Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04A70ACCA1C8F69CBAD738D /* App.Color.swift */; };
 		34A35ED86F0BC4A487D1DC82 /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF996380907F6EBC71955B9D /* UIImageView+Extensions.swift */; };
+		373674BA66E69EA63833DE4F /* Pods_eSageApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A0082EB10321ECF75F56874 /* Pods_eSageApp.framework */; };
 		38A08DACD5F36C4B613A1020 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158DC9FB1432E58E3F46A875 /* PaddingLabel.swift */; };
 		3F2C43F580658D2574B64347 /* Measurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD27A5F449A77C03AE4AD38 /* Measurement.swift */; };
 		41B7BEF5F7430BC255F52A17 /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06711C19AE3D60A3446964A /* AppManager.swift */; };
@@ -30,7 +31,6 @@
 		56C13327F2937DFEBD76ECDC /* appstore.png in Resources */ = {isa = PBXBuildFile; fileRef = EDB6BCF7238282EA4CEA1252 /* appstore.png */; };
 		5F8E50C2D6B404059081E290 /* DetectLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000F29524A9FA35BE16E0C9C /* DetectLabel.swift */; };
 		66119773F5FCF9A5DA0861F1 /* URL+BaseURLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = B069CBC8A903679275F01738 /* URL+BaseURLs.swift */; };
-		66B38E4C97DCCDCEF9286C7F /* Pods_eSageApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6229ED322BFA505BE4EC0F8 /* Pods_eSageApp.framework */; };
 		691B04C06C5125CFCA35EE41 /* TextAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC373A3A98D0CEC690B297A7 /* TextAttributes.swift */; };
 		70529387D4B81575A08AAC7A /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FDA3CD07EFE3A867A353C8 /* ProgressHUD.swift */; };
 		743C54A7B4F770492A6C442A /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118ABD15573A5AEA45FD09BC /* BaseTabBarController.swift */; };
@@ -73,8 +73,8 @@
 /* Begin PBXFileReference section */
 		000F29524A9FA35BE16E0C9C /* DetectLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectLabel.swift; sourceTree = "<group>"; };
 		02FDA3CD07EFE3A867A353C8 /* ProgressHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
-		0305A4525DAAAA19485EA1B8 /* Pods-eSageApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eSageApp.release.xcconfig"; path = "Target Support Files/Pods-eSageApp/Pods-eSageApp.release.xcconfig"; sourceTree = "<group>"; };
 		0830148A173C0E54E404BE79 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		0A602B1C2688AA7F00F645F3 /* Pods-eSageApp.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eSageApp.staging.xcconfig"; path = "Target Support Files/Pods-eSageApp/Pods-eSageApp.staging.xcconfig"; sourceTree = "<group>"; };
 		0DD27A5F449A77C03AE4AD38 /* Measurement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Measurement.swift; sourceTree = "<group>"; };
 		118ABD15573A5AEA45FD09BC /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
 		11F99A3F9EBDD24A758C0EA8 /* UserDefaultKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultKey.swift; sourceTree = "<group>"; };
@@ -83,16 +83,16 @@
 		1AC7DC2821E896E1B0D0F403 /* BaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		1C75D10C9DC21D405B48A5AE /* ParentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentView.swift; sourceTree = "<group>"; };
 		2EF73F028BCF1B671E9E4758 /* CameraPermissionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPermissionManager.swift; sourceTree = "<group>"; };
-		309AC16E3FCCFA99E07061E0 /* Pods-eSageApp.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eSageApp.staging.xcconfig"; path = "Target Support Files/Pods-eSageApp/Pods-eSageApp.staging.xcconfig"; sourceTree = "<group>"; };
 		3A683CBE69F387FCACABEBE2 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		3CF98CC81665216666639B71 /* GradientLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientLabel.swift; sourceTree = "<group>"; };
 		445FAA0095E66EECBA6A2B64 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		44F08DBEEE649570AD5516DA /* Int+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extensions.swift"; sourceTree = "<group>"; };
 		4EFA0AC3DD84ABADDDF43503 /* UIScreen+ScreenSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScreen+ScreenSize.swift"; sourceTree = "<group>"; };
 		4F7FA604A822B30A91D29747 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
-		50399827E3D99F25B7FA738B /* eSageApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = eSageApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		50399827E3D99F25B7FA738B /* eSageApp.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = eSageApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5550214C7C336D7D9FE01A94 /* BiometricsAuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricsAuthenticationManager.swift; sourceTree = "<group>"; };
 		582FD5FD82739CA005C626E4 /* DisableCopyPasteTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisableCopyPasteTextField.swift; sourceTree = "<group>"; };
+		5A0082EB10321ECF75F56874 /* Pods_eSageApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_eSageApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C007DAF4FE7600C54AC3B7C /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		618C7506F1F1C307929AF39D /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		63F24AD6E13FB6C862FEB7F9 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
@@ -108,8 +108,8 @@
 		9A902D27A999BC290A2D6939 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		9DFCBBDD65639DB21A4443AC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		A21FCE29FBD07DC762A62CB7 /* XCAssets+Generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCAssets+Generated.swift"; sourceTree = "<group>"; };
-		A6229ED322BFA505BE4EC0F8 /* Pods_eSageApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_eSageApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADB30AE6BE1172109D06D757 /* eSageApp-Debug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "eSageApp-Debug.entitlements"; sourceTree = "<group>"; };
+		B00DC4B0C181C83E07B21256 /* Pods-eSageApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eSageApp.release.xcconfig"; path = "Target Support Files/Pods-eSageApp/Pods-eSageApp.release.xcconfig"; sourceTree = "<group>"; };
 		B06711C19AE3D60A3446964A /* AppManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppManager.swift; sourceTree = "<group>"; };
 		B069CBC8A903679275F01738 /* URL+BaseURLs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+BaseURLs.swift"; sourceTree = "<group>"; };
 		B1FA4147711D17439CFBE92B /* App.Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.Fonts.swift; sourceTree = "<group>"; };
@@ -124,6 +124,7 @@
 		DD9EAD2CA536B302D286060A /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		DF996380907F6EBC71955B9D /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
 		E04A70ACCA1C8F69CBAD738D /* App.Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.Color.swift; sourceTree = "<group>"; };
+		E096972B2CCD0891CA957358 /* Pods-eSageApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eSageApp.debug.xcconfig"; path = "Target Support Files/Pods-eSageApp/Pods-eSageApp.debug.xcconfig"; sourceTree = "<group>"; };
 		E3167BBD0C899836352DFD3B /* eSageApp-Staging.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "eSageApp-Staging.xcconfig"; sourceTree = "<group>"; };
 		E318FA1111F1AAA996E2C957 /* LoadingErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingErrorView.swift; sourceTree = "<group>"; };
 		E5D972F710ED899DD5F8F62D /* Regression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Regression.swift; sourceTree = "<group>"; };
@@ -142,15 +143,14 @@
 		FBDABF82617688DE346D1F0E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FC373A3A98D0CEC690B297A7 /* TextAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAttributes.swift; sourceTree = "<group>"; };
 		FECC5095B9B780709A3FA189 /* TriangleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriangleView.swift; sourceTree = "<group>"; };
-		FF6577006E8E5AB73FE5C05E /* Pods-eSageApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eSageApp.debug.xcconfig"; path = "Target Support Files/Pods-eSageApp/Pods-eSageApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		B099C8B79BF7B0038D9EBE06 /* Frameworks */ = {
+		D2C9F725735695538D889516 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				66B38E4C97DCCDCEF9286C7F /* Pods_eSageApp.framework in Frameworks */,
+				373674BA66E69EA63833DE4F /* Pods_eSageApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,8 +217,8 @@
 				95B6ACA41C769DEAD3E80F67 /* App */,
 				8139966DF03796C934EB9FC8 /* xcconfig */,
 				4F802D7B0092667815602DD7 /* Products */,
-				D024FEE60DDBBF97FDF0D737 /* Pods */,
-				473F1FEC8634D2597CCDE5D4 /* Frameworks */,
+				C90C44C7460425AE06F7DB4A /* Pods */,
+				90265708DC32F66407BD1361 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -228,14 +228,6 @@
 				A21FCE29FBD07DC762A62CB7 /* XCAssets+Generated.swift */,
 			);
 			path = Generated;
-			sourceTree = "<group>";
-		};
-		473F1FEC8634D2597CCDE5D4 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				A6229ED322BFA505BE4EC0F8 /* Pods_eSageApp.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		4F802D7B0092667815602DD7 /* Products */ = {
@@ -311,6 +303,14 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
+		90265708DC32F66407BD1361 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5A0082EB10321ECF75F56874 /* Pods_eSageApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		95B6ACA41C769DEAD3E80F67 /* App */ = {
 			isa = PBXGroup;
 			children = (
@@ -353,12 +353,12 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
-		D024FEE60DDBBF97FDF0D737 /* Pods */ = {
+		C90C44C7460425AE06F7DB4A /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				FF6577006E8E5AB73FE5C05E /* Pods-eSageApp.debug.xcconfig */,
-				0305A4525DAAAA19485EA1B8 /* Pods-eSageApp.release.xcconfig */,
-				309AC16E3FCCFA99E07061E0 /* Pods-eSageApp.staging.xcconfig */,
+				E096972B2CCD0891CA957358 /* Pods-eSageApp.debug.xcconfig */,
+				B00DC4B0C181C83E07B21256 /* Pods-eSageApp.release.xcconfig */,
+				0A602B1C2688AA7F00F645F3 /* Pods-eSageApp.staging.xcconfig */,
 			);
 			name = Pods;
 			path = ../Pods;
@@ -426,13 +426,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 94BC9F72AD92BECE5EAEF01B /* Build configuration list for PBXNativeTarget "eSageApp" */;
 			buildPhases = (
-				A06D130BA1D00672AB3A5FF7 /* [CP] Check Pods Manifest.lock */,
+				AACFCCE6F2D4FBE0601D5DD6 /* [CP] Check Pods Manifest.lock */,
 				C47A881ED3DF770BA798D515 /* SwiftGen Run Script */,
 				D3034999138366CF1A2AD394 /* SwiftLint Run Script */,
 				B5C5D485CF47349A545DC56D /* Sources */,
 				08A2ADF94EAD8F713CDF81DA /* Resources */,
-				B099C8B79BF7B0038D9EBE06 /* Frameworks */,
-				CDBE03FD932F5D6DC8DC5BF8 /* [CP] Embed Pods Frameworks */,
+				D2C9F725735695538D889516 /* Frameworks */,
+				60364EC2EEE60C7C41052933 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -449,7 +449,7 @@
 		EB0EC5EB2020E0227CFCF008 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1420;
+				LastUpgradeCheck = 1200;
 				TargetAttributes = {
 					5ECD24C35C1D18325619AE69 = {
 						DevelopmentTeam = LQQPYJBXWS;
@@ -493,7 +493,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		A06D130BA1D00672AB3A5FF7 /* [CP] Check Pods Manifest.lock */ = {
+		60364EC2EEE60C7C41052933 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-eSageApp/Pods-eSageApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-eSageApp/Pods-eSageApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-eSageApp/Pods-eSageApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AACFCCE6F2D4FBE0601D5DD6 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -532,23 +549,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "# https://github.com/SwiftGen/SwiftGen\n\nif [[ -f \"${PODS_ROOT}/SwiftGen/bin/swiftgen\" ]]; then\n  \"${PODS_ROOT}/SwiftGen/bin/swiftgen\" config run --config \"$SRCROOT/../SwiftGen.yml\"\nelse\n  echo \"warning: SwiftGen is not installed. Run 'pod install --repo-update' to install it.\"\nfi\n";
-		};
-		CDBE03FD932F5D6DC8DC5BF8 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-eSageApp/Pods-eSageApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-eSageApp/Pods-eSageApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-eSageApp/Pods-eSageApp-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
 		};
 		D3034999138366CF1A2AD394 /* SwiftLint Run Script */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -653,7 +653,6 @@
 			baseConfigurationReference = E3167BBD0C899836352DFD3B /* eSageApp-Staging.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -707,7 +706,6 @@
 			baseConfigurationReference = 6B82F21DAA3D9887BCB60EAF /* eSageApp-Debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -764,7 +762,7 @@
 		};
 		6F9397BB5634DBD6D47EBBAA /* Staging */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 309AC16E3FCCFA99E07061E0 /* Pods-eSageApp.staging.xcconfig */;
+			baseConfigurationReference = 0A602B1C2688AA7F00F645F3 /* Pods-eSageApp.staging.xcconfig */;
 			buildSettings = {
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				INFOPLIST_FILE = App/SupportingFiles/Info.plist;
@@ -776,13 +774,11 @@
 		};
 		774BC0313E6491B5783F1F1C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FF6577006E8E5AB73FE5C05E /* Pods-eSageApp.debug.xcconfig */;
+			baseConfigurationReference = E096972B2CCD0891CA957358 /* Pods-eSageApp.debug.xcconfig */;
 			buildSettings = {
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = LQQPYJBXWS;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				INFOPLIST_FILE = App/SupportingFiles/Info.plist;
 				PRODUCT_BUNDLE_IDENTIFIER = hiennguyen.eSageApp;
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "match Development hiennguyen.eSageApp";
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
 			};
@@ -793,7 +789,6 @@
 			baseConfigurationReference = 6A55ABF957B40E6505DC27D6 /* eSageApp-Release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -845,13 +840,11 @@
 		};
 		A54575814A769DE7D5DD0628 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0305A4525DAAAA19485EA1B8 /* Pods-eSageApp.release.xcconfig */;
+			baseConfigurationReference = B00DC4B0C181C83E07B21256 /* Pods-eSageApp.release.xcconfig */;
 			buildSettings = {
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = LQQPYJBXWS;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				INFOPLIST_FILE = App/SupportingFiles/Info.plist;
 				PRODUCT_BUNDLE_IDENTIFIER = hiennguyen.eSageApp;
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "match AppStore hiennguyen.eSageApp";
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
 			};
