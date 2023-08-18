@@ -106,4 +106,218 @@ platform :ios do
             }
           )
       end
+
+
+    # Gets configuration name from environment
+    private_lane :get_configuration do |options|
+      environment = options[:environment]
+      case environment
+      when "Staging"
+      config = "#{environment}-Staging"
+      else
+      config = environment
+      end
+      config
+  end
+
+  lane :bitrise_build do |options|
+      # environment:[Debug|Staging|Release] Default: "Staging"
+      environment = (options[:environment] ? options[:environment] : "Staging")
+      configuration = get_configuration(environment: environment)
+
+      # distribution_method:[AppStore|AdHoc|Development] Default: AdHoc
+      distribution_method = (options[:distribution_method] ? options[:distribution_method] : "AdHoc")
+
+      # is_local:[true|false] Default: false
+      is_local = (options[:is_local] ? options[:is_local] : false)
+
+      case distribution_method
+      when "AppStore"
+      exportMethod = "app-store"
+      provisioningProfile = "Release Profile"
+      when "AdHoc"
+      exportMethod = "ad-hoc"
+      provisioningProfile = "match AdHoc hiennguyen.eSageApp"
+      when "Development"
+      exportMethod = "development"
+      provisioningProfile = "match Development hiennguyen.eSageApp"
+      codeSign = "iPhone Developer"
+      end
+
+      case environment
+      when "Staging"
+      if distribution_method == "AppStore"
+          raise "AppStore distribution is only available on Release environment"
+      end
+      scheme = "eSageAppStg"
+      envName = "Staging"
+      when "Release"
+      scheme = "eSageAppRelease"
+      envName = ""
+
+      if !is_local
+      update_build_version
+      end
+  
+      case distribution_method
+      when "AdHoc"
+      update_provisioning_specifier
+      get_certs_and_provisionings
+      when "Development"
+      get_certs_and_provisionings
+      end
+
+      case distribution_method
+      when "AppStore"
+      outputName = "eSageApp#{envName}.ipa"
+      when "AdHoc"
+      outputName = "eSageApp#{envName}-AdHoc.ipa"
+      when "Development"
+      outputName = "eSageApp#{envName}-Development.ipa"
+      end
+
+      build
+  end
+
+  # Call in Bitrise
+  
+  lane :update_app_version_suffix do |options|
+      configuration = (options[:configuration] ? options[:configuration] : "Staging")
+      appVersion = get_version_number(
+        xcodeproj: projectPath,
+        configuration: configuration,
+        target: "eSageApp"
+      )
+  
+      envName = options[:envName] 
+      if !envName.nil?
+        appVersion = appVersion + "-" + envName
+      end
+  
+      bitriseBuildNumber = options[:bitriseBuildNumber]
+      if !bitriseBuildNumber.nil?
+        appVersion = appVersion + "-" + bitriseBuildNumber
+      end
+  
+      gitHash = options[:gitHash]
+      if !gitHash.nil?
+        appVersion = appVersion + "-" + gitHash
+      end
+     
+      puts appVersion   
+  
+      update_info_plist(
+        xcodeproj: projectPath,
+        plist_path: plistPath,
+        block: lambda { |plist|
+          plist["CFBundleShortVersionString"] = appVersion
+        }
+      )
+  end
+
+  lane :increase_version_minor do |options|
+      configuration = (options[:configuration] ? options[:configuration] : "Staging")
+      appVersion = get_version_number(
+        xcodeproj: projectPath,
+        configuration: configuration,
+        target: "eSageApp"
+      )
+      last_version = appVersion
+      versions = appVersion.split(".")
+      minorTag = versions[1].to_i
+      minorTagString = (minorTag + 1).to_s
+      versions[1] = minorTagString
+      versions[2] = "0"
+      updatedVersion = versions.join(".")
+  
+      update_info_plist(
+        xcodeproj: projectPath,
+        plist_path: plistPath,
+        block: lambda { |plist|
+          plist["CFBundleShortVersionString"] = updatedVersion
+        }
+      )
+  
+      Dir.chdir("#{ENV['PWD']}") do
+        commit_push_create_pr_update_version(last_version: last_version, next_version: updatedVersion)
+      end
+  end
+
+  # Updates or Creates tag and Github release page with a given branch's latest commit
+  lane :update_tag_and_github_release do |options|
+      branch = options[:branch]
+      unless !branch.nil? && branch != ""
+      UI.user_error!("Branch is missing, you should specfy a branch name")
+      end
+
+      tag = branch[VERSION_PATTERN]
+
+      unless !tag.nil? && tag != ""
+      UI.user_error!("The specified branch doesn't contain a version number, you should specify a release branch")
+      end
+
+      create_tag(branch: branch, tag: tag)
+      create_github_release(tag: tag)
+  end
+
+  # Creates or updates tag with a given branch's latest commit
+  private_lane :create_tag do |options| 
+      branch = options[:branch]
+      tag = options[:tag]
+
+      unless !branch.nil? && branch != "" && !tag.nil? && tag != ""
+      UI.user_error!("Branch or tag is missing, you should specify both")
+      end
+
+      sh "git fetch"
+      sh "git checkout origin/#{branch}"
+      sh "git tag --force #{tag}"
+      sh "git push --force origin #{tag}"
+  end
+
+  # Creates Github release page with a given tag if not exist
+  private_lane :create_github_release do |options| 
+      tag = options[:tag]
+
+      unless !tag.nil? && tag != ""
+      UI.user_error!("Tag is missing, you should specify a tag")
+      end
+
+      current_github_release_note = get_github_release(
+      url: GITHUB_REPO_NAME, 
+      version: tag,
+      api_token: ENV['GITHUB_ACCESS_TOKEN'])
+      if current_github_release_note.nil?
+      puts("Create Github Release Note")
+      set_github_release(
+          repository_name: GITHUB_REPO_NAME,
+          api_token: ENV['GITHUB_ACCESS_TOKEN'],
+          name: tag,
+          tag_name: tag,
+          description: "xxxxx"
+          )
+      end
+  end
+
+  private_lane :create_release_notes do |options|
+    sh "git log -1 --pretty=tformat:\"#{options[:format]}\" > release_notes.txt"
+  end
+
+  def commit_push_create_pr_update_version(last_version: "", next_version: "")
+      github_token = ENV['GITHUB_ACCESS_TOKEN']
+      sh "git fetch"
+      sh "git checkout -b updating_version"
+      sh "git add ."
+      sh "git commit -m '[Update_Version] Increase version from #{last_version} to #{next_version}'"
+      sh "git push -u origin updating_version"
+      create_pull_request(
+      api_token: github_token,
+      repo: GITHUB_REPO_NAME,
+      title: "[Update_Version] Increase version from #{last_version} to #{next_version}",
+      body: "XXXXXXX",
+      assignees: "nguyenduchien",
+      head: "updating_version",
+      labels: "Version"
+      )
+  end
 end
