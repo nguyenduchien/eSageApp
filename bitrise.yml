@@ -1,13 +1,6 @@
 format_version: "11"
 default_step_lib_source: https://github.com/bitrise-io/bitrise-steplib.git
 project_type: ios
-trigger_map:
-- push_branch: test/bitrise/02
-  workflow: deploy_staging
-- pull_request_source_branch: '*'
-  workflow: deploy_staging
-# - pull_request_target_branch: "*"
-#   workflow: unit_test_and_danger
 workflows:
   _initial_setup:
     steps:
@@ -17,10 +10,10 @@ workflows:
     - recreate-user-schemes@1:
         inputs:
         - project_path: $BITRISE_PROJECT_PATH
-    - xcodegen@0:
-        inputs:
-        - project_path: $BITRISE_SOURCE_DIR/eSageApp
-        - spec_path: $BITRISE_SOURCE_DIR/eSageApp/project_ci.yml
+    # - xcodegen@0:
+    #     inputs:
+    #     - project_path: $BITRISE_SOURCE_DIR/eSageApp
+    #     - spec_path: $BITRISE_SOURCE_DIR/eSageApp/project_ci.yml
     - certificate-and-profile-installer@1.10.1: {}
     - recreate-user-schemes@1:
         inputs:
@@ -34,7 +27,6 @@ workflows:
         - cache_level: none
   _setup_dependencies:
     - cocoapods-install@1.10.0: {}
-
   _save_cache:
     steps:
     - cache-push@2.5:
@@ -43,11 +35,9 @@ workflows:
         - compress_archive: 'true'
         - cache_paths: "./Pods -> ./Podfile.lock"
         is_always_run: true
-
   _load_cache:
     steps:
     - cache-pull@2: {}
-
   _prepare_slack_message:
     steps:
     - script@1:
@@ -59,7 +49,6 @@ workflows:
             # debug log
             set -x
             envman add --key SLACK_MESSAGE --value "This is the latest build from *${BITRISE_GIT_BRANCH}* in *${BUILD_ENVIRONMENT}* env"
-
   _post_on_ci_ch:
     steps:
     - create-install-page-qr-code@1.0: {}
@@ -70,7 +59,6 @@ workflows:
         - image_url: "$BITRISE_PUBLIC_INSTALL_PAGE_QR_CODE_IMAGE_URL"
         - text: "$SLACK_MESSAGE"
         - webhook_url: "$SLACK_WEBHOOK_URL"
-  
   archive_and_export_app:
     summary: Create an IPA file to install your app on a device or share it with your team.
     description: The workflow will first clone your Git repository, cache and install your project's dependencies if any, export an IPA file from the project and save it.
@@ -88,7 +76,6 @@ workflows:
         - automatic_code_signing: api-key
         - cache_level: none
     - deploy-to-bitrise-io@2: {}
-  
   build:
     summary: Build your Xcode project.
     description: The workflow will first clone your Git repository, cache and install your project's dependencies if any and build your project.
@@ -99,7 +86,6 @@ workflows:
         inputs:
         - project_path: $BITRISE_PROJECT_PATH
     - deploy-to-bitrise-io@2: {}
-
   deploy_staging:
     envs:
     - BUILD_ENVIRONMENT: Staging
@@ -134,7 +120,6 @@ workflows:
     - _save_cache
     - _prepare_slack_message
     - _post_on_ci_ch
-
   update_tag_and_deploy_to_apple:
     steps:
     - fastlane@3.3.0:
@@ -145,7 +130,6 @@ workflows:
     - _initial_setup
     after_run:
     - deploy_to_apple
-
   deploy_to_apple:
     before_run:
     - _notify_of_deploy_to_apple
@@ -161,7 +145,6 @@ workflows:
         - pretext: " *Upload to App Store is complete*"
         - webhook_url: "$SLACK_WEBHOOK_URL"
         - channel: "#app-distribution"
-
   deploy_release:
     steps:
     - fastlane@2.7.0:
@@ -185,7 +168,6 @@ workflows:
     after_run:
     - _save_cache
     - _post_on_ci_ch 
-
   _notify_of_deploy_to_apple:
     steps:
     - slack@3.1.3:
@@ -195,7 +177,6 @@ workflows:
             $BITRISE_BUILD_URL
         - channel: "#app-distribution"
         - webhook_url: "$SLACK_WEBHOOK_URL"
-
   unit_test_and_danger:
     steps:
     - custom-test-results-export@0:
@@ -210,7 +191,6 @@ workflows:
     - _initial_setup
     - _load_cache
     - _setup_dependencies
-
   UpdateMasterVersion:
     steps:
     - fastlane@3:
@@ -220,7 +200,6 @@ workflows:
     - _initial_setup
     - _load_cache
     - _setup_dependencies
-
 app:
   envs:
   - opts:
@@ -244,3 +223,11 @@ app:
 meta:
   bitrise.io:
     stack: osx-xcode-14.2.x-ventura
+    machine_type_id: g2-m1.4core
+trigger_map:
+- push_branch: test/bitrise/02
+  workflow: deploy_staging
+- pull_request_source_branch: '*'
+  workflow: build
+# - pull_request_target_branch: "*"
+#   workflow: unit_test_and_danger
