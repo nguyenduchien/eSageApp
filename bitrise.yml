@@ -2,6 +2,34 @@ format_version: "11"
 default_step_lib_source: https://github.com/bitrise-io/bitrise-steplib.git
 project_type: ios
 workflows:
+  _initial_setup:
+    steps:
+    - activate-ssh-key@4.0.3:
+        run_if: '{{getenv "SSH_RSA_PRIVATE_KEY" | ne ""}}'
+    - script@1:
+        inputs:
+        - content: |-
+            if [[ -n "$BITRISE_GIT_COMMIT" && -n "$BITRISE_GIT_TAG" ]]; then
+                echo "Reset BITRISE_GIT_COMMIT to empty"
+                envman add --key GIT_COMMIT --value ""
+            elif [[ -n "$BITRISE_GIT_COMMIT" ]]; then
+                echo "Use BITRISE_GIT_COMMIT"
+                envman add --key GIT_COMMIT --value $BITRISE_GIT_COMMIT
+            else
+                echo "Use empty commit"
+                envman add --key GIT_COMMIT --value ""
+            fi
+        opts:
+          is_template: true
+    - git-clone@6.1:
+        inputs:
+        - commit: "$GIT_COMMIT"
+        - clone_depth: '10'
+    # - xcodegen@0:
+    #     inputs:
+    #     - project_path: $BITRISE_SOURCE_DIR/eSageApp
+    #     - spec_path: $BITRISE_SOURCE_DIR/eSageApp/project_ci.yml
+    - certificate-and-profile-installer@1.10.1: {}
   _save_cache:
     steps:
     - cache-push@2.7.1:
@@ -10,6 +38,7 @@ workflows:
         - compress_archive: 'true'
         - cache_paths: "./Pods -> ./Podfile.lock"
         is_always_run: true
+  
   archive_and_export_app:
     summary: Create an IPA file to install your app on a device or share it with your team.
     description: The workflow will first clone your Git repository, cache and install your project's dependencies if any, export an IPA file from the project and save it.
