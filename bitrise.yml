@@ -2,6 +2,14 @@ format_version: "11"
 default_step_lib_source: https://github.com/bitrise-io/bitrise-steplib.git
 project_type: ios
 workflows:
+  _save_cache:
+    steps:
+    - cache-push@2.7.1:
+        inputs:
+        - is_debug_mode: 'true'
+        - compress_archive: 'true'
+        - cache_paths: "./Pods -> ./Podfile.lock"
+        is_always_run: true
   archive_and_export_app:
     summary: Create an IPA file to install your app on a device or share it with your team.
     description: The workflow will first clone your Git repository, cache and install your project's dependencies if any, export an IPA file from the project and save it.
