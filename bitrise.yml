@@ -108,7 +108,7 @@ app:
       is_expand: false
     BITRISE_DISTRIBUTION_METHOD: ad-hoc
 trigger_map:
-- pull_request_target_branch: "*"
+- push_branch: test/bitrise/02
   workflow: build
-# - pull_request_target_branch: "*"
-  # pipeline: unit_test_and_danger
+- pull_request_source_branch: '*'
+  workflow: build
