@@ -30,6 +30,26 @@ workflows:
     #     - project_path: $BITRISE_SOURCE_DIR/eSageApp
     #     - spec_path: $BITRISE_SOURCE_DIR/eSageApp/project_ci.yml
     - certificate-and-profile-installer@1.10.1: {}
+  _setup_dependencies:
+# steps: //Set up dependencies from Artifactor
+    # - authenticate-host-with-netrc@0:
+    #     inputs:
+    #     - username: "$JFROG_ARTIFACTORY_USERNAME"
+    #     - password: "$JFROG_ARTIFACTORY_KEY"
+    #     - host: eSage.jfrog.io
+    # - script@1:
+    #     inputs:
+    #     - content: |-
+    #         #!/usr/bin/env bash
+    #         # fail if any commands fails
+    #         set -e
+    #         # debug log
+    #         set -x
+
+    #         gem install cocoapods-art
+
+    #         pod repo-art add app-ios-local "https://eSage.jfrog.io/artifactory/api/pods/app-ios-local"
+    - cocoapods-install@1.10.0: {}
   _save_cache:
     steps:
     - cache-push@2.7.1:
@@ -60,12 +80,18 @@ workflows:
     summary: Build your Xcode project.
     description: The workflow will first clone your Git repository, cache and install your project's dependencies if any and build your project.
     steps:
-    - activate-ssh-key@4: {}
-    - git-clone@8: {}
+    # - activate-ssh-key@4: {}
+    # - git-clone@8: {}
     - recreate-user-schemes@1:
         inputs:
         - project_path: $BITRISE_PROJECT_PATH
     - deploy-to-bitrise-io@2: {}
+    before_run:
+    - _initial_setup
+    - _load_cache
+    - _setup_dependencies
+    after_run:
+    - _save_cache
 meta:
   bitrise.io:
     stack: osx-xcode-14.2.x-ventura
@@ -84,5 +110,5 @@ app:
 trigger_map:
 - push_branch: test/bitrise/02
   workflow: _initial_setup
-- pull_request_source_branch: '*'
-  workflow: _initial_setup
+# - pull_request_target_branch: "*"
+  # pipeline: unit_test_and_danger
