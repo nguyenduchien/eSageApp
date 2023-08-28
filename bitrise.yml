@@ -83,6 +83,6 @@ app:
     BITRISE_DISTRIBUTION_METHOD: ad-hoc
 trigger_map:
 - push_branch: test/bitrise/02
-  workflow: build
+  workflow: _initial_setup
 - pull_request_source_branch: '*'
   workflow: build
