@@ -110,5 +110,5 @@ app:
 trigger_map:
 - push_branch: test/bitrise/02
   workflow: build
-- pull_request_source_branch: '*'
-  workflow: build
+# - pull_request_source_branch: '*'
+#   workflow: build
