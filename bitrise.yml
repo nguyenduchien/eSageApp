@@ -4,7 +4,7 @@ project_type: ios
 workflows:
   _initial_setup:
     steps:
-    - activate-ssh-key@4.0.3:
+    - activate-ssh-key@4.1.0:
         run_if: '{{getenv "SSH_RSA_PRIVATE_KEY" | ne ""}}'
     - script@1:
         inputs:
@@ -87,8 +87,8 @@ workflows:
     summary: Build your Xcode project.
     description: The workflow will first clone your Git repository, cache and install your project's dependencies if any and build your project.
     steps:
-    - activate-ssh-key@4: {}
-    - git-clone@8: {}
+    # - activate-ssh-key@4: {}
+    # - git-clone@8: {}
     - recreate-user-schemes@1:
         inputs:
         - project_path: $BITRISE_PROJECT_PATH
