@@ -62,7 +62,7 @@ workflows:
   archive_and_export_app:
     summary: Create an IPA file to install your app on a device or share it with your team.
     description: The workflow will first clone your Git repository, cache and install your project's dependencies if any, export an IPA file from the project and save it.
-    - git-clone@8: {}
+    steps:
     - recreate-user-schemes@1:
         inputs:
         - project_path: $BITRISE_PROJECT_PATH
@@ -71,7 +71,7 @@ workflows:
         - project_path: $BITRISE_PROJECT_PATH
         - scheme: $BITRISE_SCHEME
         - distribution_method: $BITRISE_DISTRIBUTION_METHOD
-        - automatic_code_signing: api-kes
+        - automatic_code_signing: api-key
         - cache_level: none
     - deploy-to-bitrise-io@2: {}
     before_run:
