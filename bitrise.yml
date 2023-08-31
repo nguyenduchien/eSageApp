@@ -30,27 +30,10 @@ workflows:
     #     - project_path: $BITRISE_SOURCE_DIR/eSageApp
     #     - spec_path: $BITRISE_SOURCE_DIR/eSageApp/project_ci.yml
     - certificate-and-profile-installer@1.10.1: {}
+
   _setup_dependencies:
     steps:
     - cocoapods-install@1.10.0: {}
-# steps: //Set up dependencies from Artifactor
-    # - authenticate-host-with-netrc@0:
-    #     inputs:
-    #     - username: "$JFROG_ARTIFACTORY_USERNAME"
-    #     - password: "$JFROG_ARTIFACTORY_KEY"
-    #     - host: eSage.jfrog.io
-    # - script@1:
-    #     inputs:
-    #     - content: |-
-    #         #!/usr/bin/env bash
-    #         # fail if any commands fails
-    #         set -e
-    #         # debug log
-    #         set -x
-
-    #         gem install cocoapods-art
-
-    #         pod repo-art add app-ios-local "https://eSage.jfrog.io/artifactory/api/pods/app-ios-local"
 
   _save_cache:
     steps:
@@ -64,12 +47,21 @@ workflows:
   _load_cache:
     steps:
     - cache-pull@2: {}
+
+  _post_on_ci_ch:
+    steps:
+    - create-install-page-qr-code@1.0: {}
+    # - slack@3.1:
+    #     inputs:
+    #     - channel: "#app-distribution"
+    #     - pretext: "*Here's the iOS build:*"
+    #     - image_url: "$BITRISE_PUBLIC_INSTALL_PAGE_QR_CODE_IMAGE_URL"
+    #     - text: "$TEST 1 2 3"
+    #     - webhook_url: "$SLACK_WEBHOOK_URL"
   
   archive_and_export_app:
     summary: Create an IPA file to install your app on a device or share it with your team.
     description: The workflow will first clone your Git repository, cache and install your project's dependencies if any, export an IPA file from the project and save it.
-    steps:
-    - activate-ssh-key@4: {}
     - git-clone@8: {}
     - recreate-user-schemes@1:
         inputs:
@@ -82,13 +74,18 @@ workflows:
         - automatic_code_signing: api-kes
         - cache_level: none
     - deploy-to-bitrise-io@2: {}
+    before_run:
+    - _initial_setup
+    - _load_cache
+    - _setup_dependencies
+    after_run:
+    - _save_cache
+    - _post_on_ci_ch
   
   build:
     summary: Build your Xcode project.
     description: The workflow will first clone your Git repository, cache and install your project's dependencies if any and build your project.
     steps:
-    # - activate-ssh-key@4: {}
-    # - git-clone@8: {}
     - recreate-user-schemes@1:
         inputs:
         - project_path: $BITRISE_PROJECT_PATH
@@ -99,6 +96,8 @@ workflows:
     - _setup_dependencies
     after_run:
     - _save_cache
+    - _post_on_ci_ch
+    
 
 meta:
   bitrise.io:
