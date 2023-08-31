@@ -51,13 +51,13 @@ workflows:
   _post_on_ci_ch:
     steps:
     - create-install-page-qr-code@1.0: {}
-    # - slack@3.1:
-    #     inputs:
-    #     - channel: "#app-distribution"
-    #     - pretext: "*Here's the iOS build:*"
-    #     - image_url: "$BITRISE_PUBLIC_INSTALL_PAGE_QR_CODE_IMAGE_URL"
-    #     - text: "$TEST 1 2 3"
-    #     - webhook_url: "$SLACK_WEBHOOK_URL"
+    - slack@3.1:
+        inputs:
+        - channel: "#app-distribution"
+        - pretext: "*Here's the iOS build:*"
+        - image_url: "$BITRISE_PUBLIC_INSTALL_PAGE_QR_CODE_IMAGE_URL"
+        - text: "TEST 1 2 3"
+        - webhook_url: "$SLACK_WEBHOOK_URL"
   
   archive_and_export_app:
     summary: Create an IPA file to install your app on a device or share it with your team.
