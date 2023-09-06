@@ -58,7 +58,8 @@ workflows:
             set -e
             # debug log
             set -x
-                envman add --key SLACK_MESSAGE --value "@Mark This is the latest build from *${BITRISE_GIT_BRANCH}* in ${BUILD_ENVIRONMENT} env"
+                envman add --key SLACK_MESSAGE --value "@Mark This is the latest build from *${BITRISE_GIT_BRANCH}* in ${BUILD_ENVIRONMENT} env. Please check the build here:
+            $BITRISE_BUILD_URL"
   _post_on_ci_ch:
     steps:
     - create-install-page-qr-code@1.0.1: {}
