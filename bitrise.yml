@@ -67,8 +67,8 @@ workflows:
         inputs:
         - channel: "#app-distribution"
         - pretext: "*Here's the iOS build:*"
-        # - thumb_url: ""
-        - image_url: "$BITRISE_PUBLIC_INSTALL_PAGE_QR_CODE_IMAGE_URL"
+        - thumb_url: "BITRISE_PUBLIC_INSTALL_PAGE_QR_CODE_IMAGE_URL"
+        # - image_url: "$BITRISE_PUBLIC_INSTALL_PAGE_QR_CODE_IMAGE_URL"
         - emoji: ":quay:"
         - text: "$SLACK_MESSAGE"
         - webhook_url: "$SLACK_WEBHOOK_URL"

@@ -134,7 +134,8 @@ platform :ios do
       case distribution_method
       when "AppStore"
       exportMethod = "app-store"
-      provisioningProfile = "Release Profile"
+      # provisioningProfile = "Release Profile"
+      provisioningProfile = "match Appstore hiennguyen.eSageApp"
       when "AdHoc"
       exportMethod = "ad-hoc"
       provisioningProfile = "match AdHoc hiennguyen.eSageApp"
