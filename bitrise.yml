@@ -103,10 +103,26 @@ workflows:
     envs:
     - BUILD_ENVIRONMENT: Staging
     steps:
+    - script:
+        inputs:
+        - content: |
+            #!/bin/bash
+            gitHash=$(git rev-parse --short HEAD)
+            envman add --key GIT_HASH --value $gitHash
     - recreate-user-schemes@1:
         inputs:
         - project_path: $BITRISE_PROJECT_PATH
-    - deploy-to-bitrise-io@2: {}
+    - fastlane@3.4.2:
+        inputs:
+        - lane: bitrise_build environment:Staging distribution_method:AdHoc
+        title: fastlane build
+    - deploy-to-bitrise-io@2.2:
+        inputs:
+        - deploy_path: "./eSageApp-AdHoc.ipa"
+    - deploy-to-bitrise-io@2.2:
+        title: Deploy to Bitrise.io - dSYM
+        inputs:
+        - deploy_path: "./eSageApp-AdHoc.app.dSYM.zip"
     before_run:
     - _initial_setup
     - _load_cache
