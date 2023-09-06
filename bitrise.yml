@@ -48,15 +48,28 @@ workflows:
     steps:
     - cache-pull@2: {}
 
+  _prepare_slack_message:
+    steps:
+    - script@1:
+        inputs:
+        - content: |
+            #!/usr/bin/env bash
+            # fail if any commands fails
+            set -e
+            # debug log
+            set -x
+                envman add --key SLACK_MESSAGE --value "This is the latest build from *${BITRISE_GIT_BRANCH}* in *${BUILD_ENVIRONMENT}* env"
   _post_on_ci_ch:
     steps:
-    - create-install-page-qr-code@1.0: {}
+    - create-install-page-qr-code@1.0.1: {}
     - slack@3.1:
         inputs:
         - channel: "#app-distribution"
         - pretext: "*Here's the iOS build:*"
         - image_url: "$BITRISE_PUBLIC_INSTALL_PAGE_QR_CODE_IMAGE_URL"
-        - text: "TEST 1 2 3"
+        - thumb_url: "https://i.ibb.co/cJjD6Rt/e-Sage-App-Icon.png"
+        - emoji: "quay"
+        - text: "TEST 1 2 3 $SLACK_MESSAGE"
         - webhook_url: "$SLACK_WEBHOOK_URL"
   
   archive_and_export_app:
@@ -80,6 +93,7 @@ workflows:
     - _setup_dependencies
     after_run:
     - _save_cache
+    - _prepare_slack_message
     - _post_on_ci_ch
   
   build:
@@ -96,6 +110,7 @@ workflows:
     - _setup_dependencies
     after_run:
     - _save_cache
+    - _prepare_slack_message
     - _post_on_ci_ch
     
 
