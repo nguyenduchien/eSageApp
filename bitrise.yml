@@ -58,7 +58,7 @@ workflows:
             set -e
             # debug log
             set -x
-                envman add --key SLACK_MESSAGE --value "This is the latest build from *${BITRISE_GIT_BRANCH}* in *${BUILD_ENVIRONMENT}* env"
+                envman add --key SLACK_MESSAGE --value "@Mark This is the latest build from *${BITRISE_GIT_BRANCH}* in ${BUILD_ENVIRONMENT} env"
   _post_on_ci_ch:
     steps:
     - create-install-page-qr-code@1.0.1: {}
@@ -66,10 +66,10 @@ workflows:
         inputs:
         - channel: "#app-distribution"
         - pretext: "*Here's the iOS build:*"
-        - image_url: "$BITRISE_PUBLIC_INSTALL_PAGE_QR_CODE_IMAGE_URL"
-        - thumb_url: "https://i.ibb.co/cJjD6Rt/e-Sage-App-Icon.png"
-        - emoji: "quay"
-        - text: "TEST 1 2 3 $SLACK_MESSAGE"
+        - thumb_url: "$BITRISE_PUBLIC_INSTALL_PAGE_QR_CODE_IMAGE_URL"
+        - image_url: "https://i.ibb.co/cJjD6Rt/e-Sage-App-Icon.png"
+        - emoji: ":quay:"
+        - text: "$SLACK_MESSAGE"
         - webhook_url: "$SLACK_WEBHOOK_URL"
   
   archive_and_export_app:
@@ -99,6 +99,8 @@ workflows:
   build:
     summary: Build your Xcode project.
     description: The workflow will first clone your Git repository, cache and install your project's dependencies if any and build your project.
+    envs:
+    - BUILD_ENVIRONMENT: Staging
     steps:
     - recreate-user-schemes@1:
         inputs:
