@@ -85,27 +85,25 @@ platform :ios do
         )
     end
 
-      private_lane :update_build_version do
-          buildtime = Time.now.strftime("%m-%d %H-%M")
-      
+    private_lane :update_build_version do
+        buildtime = Time.now.strftime("%m-%d %H-%M")    
           appVersion = get_version_number(
             xcodeproj: projectPath,
             configuration: configuration,
             target: "eSageApp"
           )
-          versions = appVersion.split(".")
+        versions = appVersion.split(".")
           versions.pop()
           fixedVersions = versions.push(buildtime)
           fixedBuildVersion = fixedVersions.join(".")
-      
-          update_info_plist(
-            xcodeproj: projectPath,
-            plist_path: plistPath,
-            block: lambda { |plist|
-              plist["CFBundleVersion"] = fixedBuildVersion
-            }
-          )
-      end
+        update_info_plist(
+          xcodeproj: projectPath,
+          plist_path: plistPath,
+          block: lambda { |plist|
+            plist["CFBundleVersion"] = fixedBuildVersion
+          }
+        )
+    end
 
 
     # Gets configuration name from environment
