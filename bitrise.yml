@@ -2,12 +2,81 @@ format_version: "11"
 default_step_lib_source: https://github.com/bitrise-io/bitrise-steplib.git
 project_type: ios
 workflows:
+  _initial_setup:
+    steps:
+    - activate-ssh-key@4.1.0:
+        run_if: '{{getenv "SSH_RSA_PRIVATE_KEY" | ne ""}}'
+    - script@1:
+        inputs:
+        - content: |-
+            if [[ -n "$BITRISE_GIT_COMMIT" && -n "$BITRISE_GIT_TAG" ]]; then
+                echo "Reset BITRISE_GIT_COMMIT to empty"
+                envman add --key GIT_COMMIT --value ""
+            elif [[ -n "$BITRISE_GIT_COMMIT" ]]; then
+                echo "Use BITRISE_GIT_COMMIT"
+                envman add --key GIT_COMMIT --value $BITRISE_GIT_COMMIT
+            else
+                echo "Use empty commit"
+                envman add --key GIT_COMMIT --value ""
+            fi
+        opts:
+          is_template: true
+    - git-clone@6.1:
+        inputs:
+        - commit: "$GIT_COMMIT"
+        - clone_depth: '10'
+    # - xcodegen@0:
+    #     inputs:
+    #     - project_path: $BITRISE_SOURCE_DIR/eSageApp
+    #     - spec_path: $BITRISE_SOURCE_DIR/eSageApp/project_ci.yml
+    - certificate-and-profile-installer@1.10.1: {}
+
+  _setup_dependencies:
+    steps:
+    - cocoapods-install@1.10.0: {}
+
+  _save_cache:
+    steps:
+    - cache-push@2.7.1:
+        inputs:
+        - is_debug_mode: 'true'
+        - compress_archive: 'true'
+        - cache_paths: "./Pods -> ./Podfile.lock"
+        is_always_run: true
+  
+  _load_cache:
+    steps:
+    - cache-pull@2: {}
+
+  _prepare_slack_message:
+    steps:
+    - script@1:
+        inputs:
+        - content: |
+            #!/usr/bin/env bash
+            # fail if any commands fails
+            set -e
+            # debug log
+            set -x
+                envman add --key SLACK_MESSAGE --value "@Mark This is the latest build from *${BITRISE_GIT_BRANCH}* in ${BUILD_ENVIRONMENT} env. Please check the build here:
+            $BITRISE_BUILD_URL"
+  _post_on_ci_ch:
+    steps:
+    - create-install-page-qr-code@1.0.1: {}
+    - slack@3.1:
+        inputs:
+        - channel: "#app-distribution"
+        - pretext: "*Here's the iOS build:*"
+        - thumb_url: "BITRISE_PUBLIC_INSTALL_PAGE_QR_CODE_IMAGE_URL"
+        # - image_url: "$BITRISE_PUBLIC_INSTALL_PAGE_QR_CODE_IMAGE_URL"
+        - emoji: ":quay:"
+        - text: "$SLACK_MESSAGE"
+        - webhook_url: "$SLACK_WEBHOOK_URL"
+  
   archive_and_export_app:
     summary: Create an IPA file to install your app on a device or share it with your team.
     description: The workflow will first clone your Git repository, cache and install your project's dependencies if any, export an IPA file from the project and save it.
     steps:
-    - activate-ssh-key@4: {}
-    - git-clone@8: {}
     - recreate-user-schemes@1:
         inputs:
         - project_path: $BITRISE_PROJECT_PATH
@@ -19,20 +88,56 @@ workflows:
         - automatic_code_signing: api-key
         - cache_level: none
     - deploy-to-bitrise-io@2: {}
+    before_run:
+    - _initial_setup
+    - _load_cache
+    - _setup_dependencies
+    after_run:
+    - _save_cache
+    - _prepare_slack_message
+    - _post_on_ci_ch
+  
   build:
     summary: Build your Xcode project.
     description: The workflow will first clone your Git repository, cache and install your project's dependencies if any and build your project.
+    envs:
+    - BUILD_ENVIRONMENT: Staging
     steps:
-    - activate-ssh-key@4: {}
-    - git-clone@8: {}
+    - script:
+        inputs:
+        - content: |
+            #!/bin/bash
+            gitHash=$(git rev-parse --short HEAD)
+            envman add --key GIT_HASH --value $gitHash
     - recreate-user-schemes@1:
         inputs:
         - project_path: $BITRISE_PROJECT_PATH
-    - deploy-to-bitrise-io@2: {}
+    - fastlane@3.4.2:
+        inputs:
+        - lane: bitrise_build environment:Staging distribution_method:AdHoc
+        title: fastlane build
+    - deploy-to-bitrise-io@2.2:
+        inputs:
+        - deploy_path: "./eSageApp-AdHoc.ipa"
+    - deploy-to-bitrise-io@2.2:
+        title: Deploy to Bitrise.io - dSYM
+        inputs:
+        - deploy_path: "./eSageApp-AdHoc.app.dSYM.zip"
+    before_run:
+    - _initial_setup
+    - _load_cache
+    - _setup_dependencies
+    after_run:
+    - _save_cache
+    - _prepare_slack_message
+    - _post_on_ci_ch
+    
+
 meta:
   bitrise.io:
     stack: osx-xcode-14.2.x-ventura
     machine_type_id: g2-m1.4core
+
 app:
   envs:
   - opts:
@@ -44,6 +149,7 @@ app:
   - opts:
       is_expand: false
     BITRISE_DISTRIBUTION_METHOD: ad-hoc
+
 trigger_map:
 - push_branch: test/bitrise/02
   workflow: build
