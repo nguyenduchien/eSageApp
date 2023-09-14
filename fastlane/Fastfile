@@ -56,22 +56,22 @@ platform :ios do
 
   private_lane :build do
     disable_automatic_code_signing(path: projectPath)
-      gym(
-        scheme: scheme,
-        export_team_id: teamId,
-        export_method: exportMethod,
-        configuration: configuration,
-        output_name: outputName,
-        clean: true,
-        xcargs: 'CODE_SIGN_IDENTITY="' + codeSign + '"',
-        export_options: {
-          manageAppVersionAndBuildNumber: false,
-          provisioningProfiles: {
-            bundleId => provisioningProfile
-          }
+
+    gym(
+      scheme: scheme,
+      export_team_id: teamId,
+      export_method: exportMethod,
+      configuration: configuration,
+      output_name: outputName,
+      clean: true,
+      xcargs: 'CODE_SIGN_IDENTITY="' + codeSign + '"',
+      export_options: {
+        manageAppVersionAndBuildNumber: false,
+        provisioningProfiles: {
+          bundleId => provisioningProfile
         }
-      )
-        # upload_deploygate
+      }
+    )
   end
 
   private_lane :update_provisioning_specifier do
