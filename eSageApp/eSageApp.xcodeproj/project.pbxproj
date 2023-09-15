@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -21,7 +21,6 @@
 		2CDCA61320948BB9009A6220 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 844F94068E20FD3FBF5CFC32 /* Assets.xcassets */; };
 		321B126F23637DBF06E2F174 /* App.Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04A70ACCA1C8F69CBAD738D /* App.Color.swift */; };
 		34A35ED86F0BC4A487D1DC82 /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF996380907F6EBC71955B9D /* UIImageView+Extensions.swift */; };
-		373674BA66E69EA63833DE4F /* Pods_eSageApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A0082EB10321ECF75F56874 /* Pods_eSageApp.framework */; };
 		38A08DACD5F36C4B613A1020 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158DC9FB1432E58E3F46A875 /* PaddingLabel.swift */; };
 		3F2C43F580658D2574B64347 /* Measurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD27A5F449A77C03AE4AD38 /* Measurement.swift */; };
 		41B7BEF5F7430BC255F52A17 /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06711C19AE3D60A3446964A /* AppManager.swift */; };
@@ -32,6 +31,7 @@
 		5F8E50C2D6B404059081E290 /* DetectLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000F29524A9FA35BE16E0C9C /* DetectLabel.swift */; };
 		66119773F5FCF9A5DA0861F1 /* URL+BaseURLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = B069CBC8A903679275F01738 /* URL+BaseURLs.swift */; };
 		691B04C06C5125CFCA35EE41 /* TextAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC373A3A98D0CEC690B297A7 /* TextAttributes.swift */; };
+		6DF4405264D76ED899C7F0CF /* Pods_eSageApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 401A1AE71218017A65820457 /* Pods_eSageApp.framework */; };
 		70529387D4B81575A08AAC7A /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FDA3CD07EFE3A867A353C8 /* ProgressHUD.swift */; };
 		743C54A7B4F770492A6C442A /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118ABD15573A5AEA45FD09BC /* BaseTabBarController.swift */; };
 		75B562D5F1C799FF3B7347EF /* UserDefaultKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F99A3F9EBDD24A758C0EA8 /* UserDefaultKey.swift */; };
@@ -67,6 +67,15 @@
 		EBE4760E89E3120B085BC940 /* Int+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F08DBEEE649570AD5516DA /* Int+Extensions.swift */; };
 		EE1E4D4F7CC5EF414BE69E61 /* AppLinkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680B4E35818B79028BA9D03C /* AppLinkManager.swift */; };
 		F2F2AB94D2C85770769BEF0B /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805BCB895B60755C30582C63 /* UIView+Extensions.swift */; };
+		F80C25E82AB455A30003602E /* SageWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80C25DE2AB455A30003602E /* SageWidget.swift */; };
+		F80C25E92AB455A30003602E /* DemoWidgetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80C25DF2AB455A30003602E /* DemoWidgetApp.swift */; };
+		F80C25EA2AB455A30003602E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F80C25E02AB455A30003602E /* Assets.xcassets */; };
+		F80C25EB2AB455A30003602E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F80C25E22AB455A30003602E /* Preview Assets.xcassets */; };
+		F80C25EC2AB455A30003602E /* SageWidgetLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80C25E32AB455A30003602E /* SageWidgetLiveActivity.swift */; };
+		F80C25ED2AB455A30003602E /* SageWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80C25E42AB455A30003602E /* SageWidgetBundle.swift */; };
+		F80C25EE2AB455A30003602E /* SageWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = F80C25E52AB455A30003602E /* SageWidget.intentdefinition */; };
+		F80C25EF2AB455A30003602E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80C25E62AB455A30003602E /* ContentView.swift */; };
+		F80C25F02AB455A30003602E /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F80C25E72AB455A30003602E /* Info.plist */; };
 		FD84A908BFE9F08A6D9599D8 /* playstore.png in Resources */ = {isa = PBXBuildFile; fileRef = E635D269904E1C7ED37626C7 /* playstore.png */; };
 /* End PBXBuildFile section */
 
@@ -74,17 +83,19 @@
 		000F29524A9FA35BE16E0C9C /* DetectLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectLabel.swift; sourceTree = "<group>"; };
 		02FDA3CD07EFE3A867A353C8 /* ProgressHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
 		0830148A173C0E54E404BE79 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		0A602B1C2688AA7F00F645F3 /* Pods-eSageApp.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eSageApp.staging.xcconfig"; path = "Target Support Files/Pods-eSageApp/Pods-eSageApp.staging.xcconfig"; sourceTree = "<group>"; };
 		0DD27A5F449A77C03AE4AD38 /* Measurement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Measurement.swift; sourceTree = "<group>"; };
+		10CEAAFBA6AE727E07E7FB50 /* Pods-eSageApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eSageApp.debug.xcconfig"; path = "Target Support Files/Pods-eSageApp/Pods-eSageApp.debug.xcconfig"; sourceTree = "<group>"; };
 		118ABD15573A5AEA45FD09BC /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
 		11F99A3F9EBDD24A758C0EA8 /* UserDefaultKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultKey.swift; sourceTree = "<group>"; };
 		158DC9FB1432E58E3F46A875 /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
 		1A0915C47201C765085191BA /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1AC7DC2821E896E1B0D0F403 /* BaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		1C75D10C9DC21D405B48A5AE /* ParentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentView.swift; sourceTree = "<group>"; };
+		2046F7CB26DEE385BF6B9E55 /* Pods-eSageApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eSageApp.release.xcconfig"; path = "Target Support Files/Pods-eSageApp/Pods-eSageApp.release.xcconfig"; sourceTree = "<group>"; };
 		2EF73F028BCF1B671E9E4758 /* CameraPermissionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPermissionManager.swift; sourceTree = "<group>"; };
 		3A683CBE69F387FCACABEBE2 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		3CF98CC81665216666639B71 /* GradientLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientLabel.swift; sourceTree = "<group>"; };
+		401A1AE71218017A65820457 /* Pods_eSageApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_eSageApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		445FAA0095E66EECBA6A2B64 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		44F08DBEEE649570AD5516DA /* Int+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extensions.swift"; sourceTree = "<group>"; };
 		4EFA0AC3DD84ABADDDF43503 /* UIScreen+ScreenSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScreen+ScreenSize.swift"; sourceTree = "<group>"; };
@@ -92,7 +103,6 @@
 		50399827E3D99F25B7FA738B /* eSageApp.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = eSageApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5550214C7C336D7D9FE01A94 /* BiometricsAuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricsAuthenticationManager.swift; sourceTree = "<group>"; };
 		582FD5FD82739CA005C626E4 /* DisableCopyPasteTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisableCopyPasteTextField.swift; sourceTree = "<group>"; };
-		5A0082EB10321ECF75F56874 /* Pods_eSageApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_eSageApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C007DAF4FE7600C54AC3B7C /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		618C7506F1F1C307929AF39D /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		63F24AD6E13FB6C862FEB7F9 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
@@ -101,6 +111,7 @@
 		6A55ABF957B40E6505DC27D6 /* eSageApp-Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "eSageApp-Release.xcconfig"; sourceTree = "<group>"; };
 		6B82F21DAA3D9887BCB60EAF /* eSageApp-Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "eSageApp-Debug.xcconfig"; sourceTree = "<group>"; };
 		6BA7EA519493FBC15AC7ECF8 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		7D89EFC1AEB85BF3C24D2302 /* Pods-eSageApp.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eSageApp.staging.xcconfig"; path = "Target Support Files/Pods-eSageApp/Pods-eSageApp.staging.xcconfig"; sourceTree = "<group>"; };
 		7EE4A24F10AED3346F1E206F /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		805BCB895B60755C30582C63 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		844F94068E20FD3FBF5CFC32 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -109,7 +120,6 @@
 		9DFCBBDD65639DB21A4443AC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		A21FCE29FBD07DC762A62CB7 /* XCAssets+Generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCAssets+Generated.swift"; sourceTree = "<group>"; };
 		ADB30AE6BE1172109D06D757 /* eSageApp-Debug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "eSageApp-Debug.entitlements"; sourceTree = "<group>"; };
-		B00DC4B0C181C83E07B21256 /* Pods-eSageApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eSageApp.release.xcconfig"; path = "Target Support Files/Pods-eSageApp/Pods-eSageApp.release.xcconfig"; sourceTree = "<group>"; };
 		B06711C19AE3D60A3446964A /* AppManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppManager.swift; sourceTree = "<group>"; };
 		B069CBC8A903679275F01738 /* URL+BaseURLs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+BaseURLs.swift"; sourceTree = "<group>"; };
 		B1FA4147711D17439CFBE92B /* App.Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.Fonts.swift; sourceTree = "<group>"; };
@@ -124,7 +134,6 @@
 		DD9EAD2CA536B302D286060A /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		DF996380907F6EBC71955B9D /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
 		E04A70ACCA1C8F69CBAD738D /* App.Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.Color.swift; sourceTree = "<group>"; };
-		E096972B2CCD0891CA957358 /* Pods-eSageApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eSageApp.debug.xcconfig"; path = "Target Support Files/Pods-eSageApp/Pods-eSageApp.debug.xcconfig"; sourceTree = "<group>"; };
 		E3167BBD0C899836352DFD3B /* eSageApp-Staging.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "eSageApp-Staging.xcconfig"; sourceTree = "<group>"; };
 		E318FA1111F1AAA996E2C957 /* LoadingErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingErrorView.swift; sourceTree = "<group>"; };
 		E5D972F710ED899DD5F8F62D /* Regression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Regression.swift; sourceTree = "<group>"; };
@@ -137,6 +146,15 @@
 		F21A29CE63FAB2B011D078B6 /* CheckBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxView.swift; sourceTree = "<group>"; };
 		F28F7C50694C9603B05B9272 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		F6E610E250F469D303973E17 /* ContainerDialogSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerDialogSheet.swift; sourceTree = "<group>"; };
+		F80C25DE2AB455A30003602E /* SageWidget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SageWidget.swift; sourceTree = "<group>"; };
+		F80C25DF2AB455A30003602E /* DemoWidgetApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoWidgetApp.swift; sourceTree = "<group>"; };
+		F80C25E02AB455A30003602E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F80C25E22AB455A30003602E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F80C25E32AB455A30003602E /* SageWidgetLiveActivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SageWidgetLiveActivity.swift; sourceTree = "<group>"; };
+		F80C25E42AB455A30003602E /* SageWidgetBundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SageWidgetBundle.swift; sourceTree = "<group>"; };
+		F80C25E52AB455A30003602E /* SageWidget.intentdefinition */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.intentdefinition; path = SageWidget.intentdefinition; sourceTree = "<group>"; };
+		F80C25E62AB455A30003602E /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F80C25E72AB455A30003602E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F8664460DABC189CAA51626D /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		F97F23F32E585BCBFBFF9440 /* PaddingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingTextField.swift; sourceTree = "<group>"; };
 		F9844482CC2F6A27DEF79B7F /* UserNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNotificationManager.swift; sourceTree = "<group>"; };
@@ -146,11 +164,11 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		D2C9F725735695538D889516 /* Frameworks */ = {
+		069B2A555512C19139A6EBEB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				373674BA66E69EA63833DE4F /* Pods_eSageApp.framework in Frameworks */,
+				6DF4405264D76ED899C7F0CF /* Pods_eSageApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,8 +235,8 @@
 				95B6ACA41C769DEAD3E80F67 /* App */,
 				8139966DF03796C934EB9FC8 /* xcconfig */,
 				4F802D7B0092667815602DD7 /* Products */,
-				C90C44C7460425AE06F7DB4A /* Pods */,
-				90265708DC32F66407BD1361 /* Frameworks */,
+				CFC9A4101CF4E7229F68DEFA /* Pods */,
+				A63D2330D72766C694446D35 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -303,17 +321,10 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
-		90265708DC32F66407BD1361 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				5A0082EB10321ECF75F56874 /* Pods_eSageApp.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		95B6ACA41C769DEAD3E80F67 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				F80C25DD2AB455A30003602E /* SageWidget */,
 				FBDABF82617688DE346D1F0E /* AppDelegate.swift */,
 				618C7506F1F1C307929AF39D /* LaunchScreen.storyboard */,
 				9DFCBBDD65639DB21A4443AC /* SceneDelegate.swift */,
@@ -343,6 +354,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		A63D2330D72766C694446D35 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				401A1AE71218017A65820457 /* Pods_eSageApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C51F29E6A000D81CB8C8B361 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
@@ -353,12 +372,12 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
-		C90C44C7460425AE06F7DB4A /* Pods */ = {
+		CFC9A4101CF4E7229F68DEFA /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				E096972B2CCD0891CA957358 /* Pods-eSageApp.debug.xcconfig */,
-				B00DC4B0C181C83E07B21256 /* Pods-eSageApp.release.xcconfig */,
-				0A602B1C2688AA7F00F645F3 /* Pods-eSageApp.staging.xcconfig */,
+				10CEAAFBA6AE727E07E7FB50 /* Pods-eSageApp.debug.xcconfig */,
+				2046F7CB26DEE385BF6B9E55 /* Pods-eSageApp.release.xcconfig */,
+				7D89EFC1AEB85BF3C24D2302 /* Pods-eSageApp.staging.xcconfig */,
 			);
 			name = Pods;
 			path = ../Pods;
@@ -419,6 +438,30 @@
 			path = Base;
 			sourceTree = "<group>";
 		};
+		F80C25DD2AB455A30003602E /* SageWidget */ = {
+			isa = PBXGroup;
+			children = (
+				F80C25DE2AB455A30003602E /* SageWidget.swift */,
+				F80C25DF2AB455A30003602E /* DemoWidgetApp.swift */,
+				F80C25E02AB455A30003602E /* Assets.xcassets */,
+				F80C25E12AB455A30003602E /* Preview Content */,
+				F80C25E32AB455A30003602E /* SageWidgetLiveActivity.swift */,
+				F80C25E42AB455A30003602E /* SageWidgetBundle.swift */,
+				F80C25E52AB455A30003602E /* SageWidget.intentdefinition */,
+				F80C25E62AB455A30003602E /* ContentView.swift */,
+				F80C25E72AB455A30003602E /* Info.plist */,
+			);
+			path = SageWidget;
+			sourceTree = SOURCE_ROOT;
+		};
+		F80C25E12AB455A30003602E /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				F80C25E22AB455A30003602E /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -426,13 +469,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 94BC9F72AD92BECE5EAEF01B /* Build configuration list for PBXNativeTarget "eSageApp" */;
 			buildPhases = (
-				AACFCCE6F2D4FBE0601D5DD6 /* [CP] Check Pods Manifest.lock */,
+				A465A0E6A0872EAF8AF231B7 /* [CP] Check Pods Manifest.lock */,
 				C47A881ED3DF770BA798D515 /* SwiftGen Run Script */,
 				D3034999138366CF1A2AD394 /* SwiftLint Run Script */,
 				B5C5D485CF47349A545DC56D /* Sources */,
 				08A2ADF94EAD8F713CDF81DA /* Resources */,
-				D2C9F725735695538D889516 /* Frameworks */,
-				60364EC2EEE60C7C41052933 /* [CP] Embed Pods Frameworks */,
+				069B2A555512C19139A6EBEB /* Frameworks */,
+				3E69902867B3C6C1E27FA077 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -481,10 +524,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F80C25EB2AB455A30003602E /* Preview Assets.xcassets in Resources */,
 				2CDCA61320948BB9009A6220 /* Assets.xcassets in Resources */,
+				F80C25F02AB455A30003602E /* Info.plist in Resources */,
 				B42D7954FBC37DA868BCEAB5 /* HomeViewController.xib in Resources */,
 				8BC2AB3CCB4583306E161802 /* LaunchScreen.storyboard in Resources */,
 				CC66A6B9231A93AC2DFAEB65 /* Localizable.strings in Resources */,
+				F80C25EA2AB455A30003602E /* Assets.xcassets in Resources */,
 				56C13327F2937DFEBD76ECDC /* appstore.png in Resources */,
 				FD84A908BFE9F08A6D9599D8 /* playstore.png in Resources */,
 			);
@@ -493,7 +539,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		60364EC2EEE60C7C41052933 /* [CP] Embed Pods Frameworks */ = {
+		3E69902867B3C6C1E27FA077 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -510,7 +556,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-eSageApp/Pods-eSageApp-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		AACFCCE6F2D4FBE0601D5DD6 /* [CP] Check Pods Manifest.lock */ = {
+		A465A0E6A0872EAF8AF231B7 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -576,12 +622,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F80C25E92AB455A30003602E /* DemoWidgetApp.swift in Sources */,
 				321B126F23637DBF06E2F174 /* App.Color.swift in Sources */,
 				2C34C09964C0529CD9B6E701 /* App.DeviceType.swift in Sources */,
 				A96292ACF873707A9B112080 /* App.Fonts.swift in Sources */,
 				8D4F8A41F8556BB03A2F45DC /* App.swift in Sources */,
 				91FED707B81A0DAFA5C1EC36 /* AppConfig.swift in Sources */,
 				CDB032DFF7D780C74799E49C /* AppDelegate.swift in Sources */,
+				F80C25EE2AB455A30003602E /* SageWidget.intentdefinition in Sources */,
 				EE1E4D4F7CC5EF414BE69E61 /* AppLinkManager.swift in Sources */,
 				41B7BEF5F7430BC255F52A17 /* AppManager.swift in Sources */,
 				A6DE27D685D7A95994BDF212 /* Array+Extension.swift in Sources */,
@@ -600,21 +648,25 @@
 				5F8E50C2D6B404059081E290 /* DetectLabel.swift in Sources */,
 				9C44064811B11616E9B70BD0 /* DisableCopyPasteTextField.swift in Sources */,
 				46F856C0504FB6150A58209C /* GradationView.swift in Sources */,
+				F80C25EF2AB455A30003602E /* ContentView.swift in Sources */,
 				942DB1E2DF6B205A828B3B45 /* GradientLabel.swift in Sources */,
 				CC7CC89A27F5C88AF9EC9EC0 /* HomeViewController.swift in Sources */,
 				EBE4760E89E3120B085BC940 /* Int+Extensions.swift in Sources */,
 				4BE33D16BFCF26F7061779E7 /* LoadingErrorView.swift in Sources */,
 				A4925DA60AEE690BDEB2AF4D /* LocationManager.swift in Sources */,
 				3F2C43F580658D2574B64347 /* Measurement.swift in Sources */,
+				F80C25E82AB455A30003602E /* SageWidget.swift in Sources */,
 				5326EF9B4AAAE9B896026D48 /* NoSelectTextView.swift in Sources */,
 				38A08DACD5F36C4B613A1020 /* PaddingLabel.swift in Sources */,
 				E7A9D14EB17DD0F6BB36D286 /* PaddingTextField.swift in Sources */,
+				F80C25ED2AB455A30003602E /* SageWidgetBundle.swift in Sources */,
 				CAE379207667A7872B652169 /* ParentView.swift in Sources */,
 				70529387D4B81575A08AAC7A /* ProgressHUD.swift in Sources */,
 				D1E4517EE70C0B76D20C7B15 /* PushNotificationManager.swift in Sources */,
 				C50DEC31E32C446688CCE800 /* RadioButton.swift in Sources */,
 				0E26F4950CCBFBA687403A23 /* Regression.swift in Sources */,
 				B76810AE9766F0983C795269 /* RoundButton.swift in Sources */,
+				F80C25EC2AB455A30003602E /* SageWidgetLiveActivity.swift in Sources */,
 				08D39F77B35D59F42AC10B5D /* SceneDelegate.swift in Sources */,
 				B17823EBE1AA609CAE3C0C7D /* String.swift in Sources */,
 				691B04C06C5125CFCA35EE41 /* TextAttributes.swift in Sources */,
@@ -762,7 +814,7 @@
 		};
 		6F9397BB5634DBD6D47EBBAA /* Staging */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0A602B1C2688AA7F00F645F3 /* Pods-eSageApp.staging.xcconfig */;
+			baseConfigurationReference = 7D89EFC1AEB85BF3C24D2302 /* Pods-eSageApp.staging.xcconfig */;
 			buildSettings = {
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				INFOPLIST_FILE = App/SupportingFiles/Info.plist;
@@ -774,7 +826,7 @@
 		};
 		774BC0313E6491B5783F1F1C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E096972B2CCD0891CA957358 /* Pods-eSageApp.debug.xcconfig */;
+			baseConfigurationReference = 10CEAAFBA6AE727E07E7FB50 /* Pods-eSageApp.debug.xcconfig */;
 			buildSettings = {
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				INFOPLIST_FILE = App/SupportingFiles/Info.plist;
@@ -840,7 +892,7 @@
 		};
 		A54575814A769DE7D5DD0628 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B00DC4B0C181C83E07B21256 /* Pods-eSageApp.release.xcconfig */;
+			baseConfigurationReference = 2046F7CB26DEE385BF6B9E55 /* Pods-eSageApp.release.xcconfig */;
 			buildSettings = {
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				INFOPLIST_FILE = App/SupportingFiles/Info.plist;
