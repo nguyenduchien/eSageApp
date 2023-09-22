@@ -54,7 +54,7 @@ platform :ios do
     match(type: "appstore", force_for_new_devices: true)
   end
 
-  private_lane :build do
+  lane :build do
     disable_automatic_code_signing(path: projectPath)
 
     gym(
@@ -74,7 +74,7 @@ platform :ios do
     )
   end
 
-  private_lane :update_provisioning_specifier do
+  lane :update_provisioning_specifier do
     update_provisioning_profile_specifier(
       new_specifier: provisioningProfile,
       xcodeproj: projectPath,
@@ -83,7 +83,7 @@ platform :ios do
     )
   end
 
-  private_lane :update_build_version do
+  lane :update_build_version do
     buildtime = Time.now.strftime("%m-%d %H-%M")
 
     appVersion = get_version_number(
@@ -107,7 +107,7 @@ platform :ios do
 
 
   # Gets configuration name from environment
-  private_lane :get_configuration do |options|
+  lane :get_configuration do |options|
     environment = options[:environment]
     case environment
     when "Staging"
@@ -259,7 +259,7 @@ platform :ios do
   end
 
   # Creates or updates tag with a given branch's latest commit
-  private_lane :create_tag do |options| 
+  lane :create_tag do |options| 
     branch = options[:branch]
     tag = options[:tag]
 
@@ -274,7 +274,7 @@ platform :ios do
   end
 
   # Creates Github release page with a given tag if not exist
-  private_lane :create_github_release do |options| 
+  lane :create_github_release do |options| 
     tag = options[:tag]
 
     unless !tag.nil? && tag != ""
@@ -297,7 +297,7 @@ platform :ios do
       end
   end
 
-  private_lane :create_release_notes do |options|
+  lane :create_release_notes do |options|
     sh "git log -1 --pretty=tformat:\"#{options[:format]}\" > release_notes.txt"
   end
 
@@ -317,5 +317,6 @@ platform :ios do
       head: "updating_version",
       labels: "Version"
     )
+    end
   end
 end
