@@ -11,26 +11,18 @@ struct ContentView: View {
         formatter.dateStyle = .long
         return formatter
     }()
-    
     @State private var selectedDateIndex = 0
-    
     let dates = ["Hôm nay", "Ngày mai", "Ngày kia"]
-    
     @State private var breakfastMeals: [Meal] = [
         Meal(name: "Bánh mì", description: "Bánh mì hấp vị với trứng và thịt"),
-        Meal(name: "Sữa chua", description: "Sữa chua tự nhiên với trái cây"),
-    ]
-    
+        Meal(name: "Sữa chua", description: "Sữa chua tự nhiên với trái cây"),]
     @State private var lunchMeals: [Meal] = [
         Meal(name: "Gà nướng", description: "Gà nướng với rau sống"),
         Meal(name: "Cơm", description: "Cơm trắng"),
     ]
-    
     @State private var dinnerMeals: [Meal] = [
         Meal(name: "Súp hấp", description: "Súp hấp với thịt và rau cải"),
-        Meal(name: "Salad", description: "Salad trái cây với sốt dầu và giấm"),
-    ]
-    
+        Meal(name: "Salad", description: "Salad trái cây với sốt dầu và giấm"),]
     var body: some View {
         VStack {
             Text("Bữa ăn hôm nay")
@@ -46,25 +38,19 @@ struct ContentView: View {
                     }
                 }
                 .pickerStyle(SegmentedPickerStyle())
-                
                 Spacer()
             }
             .padding(.horizontal, 16)
-            
             Text(dateFormatter.string(from: currentDate))
                 .font(.subheadline)
                 .foregroundColor(.gray)
-            
             Divider()
                 .background(Color.gray)
                 .padding(.horizontal)
-            
             MealSection(title: "Buổi sáng", meals: $breakfastMeals)
             MealSection(title: "Buổi trưa", meals: $lunchMeals)
             MealSection(title: "Buổi tối", meals: $dinnerMeals)
-            
             Spacer()
-            
             Button(action: {
                 self.randomizeMeals()
             }) {
@@ -82,7 +68,6 @@ struct ContentView: View {
         .padding()
         .background(Color(.systemBackground))
     }
-    
     var currentDate: Date {
         let calendar = Calendar.current
         switch selectedDateIndex {
@@ -94,7 +79,6 @@ struct ContentView: View {
             return Date()
         }
     }
-    
     func randomizeMeals() {
         breakfastMeals.shuffle()
         lunchMeals.shuffle()
@@ -105,14 +89,12 @@ struct ContentView: View {
 struct MealSection: View {
     var title: String
     @Binding var meals: [Meal]
-    
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
             Text(title)
                 .font(.headline)
                 .fontWeight(.bold)
                 .foregroundColor(.green)
-            
             ForEach(meals, id: \.name) { meal in
                 MealRow(meal: meal)
             }
@@ -123,7 +105,6 @@ struct MealSection: View {
 
 struct MealRow: View {
     var meal: Meal
-    
     var body: some View {
         HStack {
             VStack(alignment: .leading, spacing: 4) {
@@ -131,7 +112,6 @@ struct MealRow: View {
                     .font(.headline)
                     .fontWeight(.bold)
                     .foregroundColor(.black)
-                
                 Text(meal.description)
                     .font(.subheadline)
                     .foregroundColor(.gray)

@@ -7,8 +7,7 @@
 
 import SwiftUI
 
-@main
-struct DemoWidgetApp: App {
+struct eSageWidgetApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
