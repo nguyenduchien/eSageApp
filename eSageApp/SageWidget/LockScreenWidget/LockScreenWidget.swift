@@ -25,7 +25,7 @@ struct AccessoryRectangulareSageWidgetView: View {
             Spacer()
             VStack(spacing: 0) {
                 HStack {
-                    Text(LockScreenWidgetLocalizedString.payWith.localized)
+                    Text("TEST 123")
                         .font(.system(size: 12, weight: .bold))
                     Spacer()
                 }.padding(EdgeInsets(top: 0, leading: 4, bottom: 0, trailing: 4))
@@ -34,7 +34,7 @@ struct AccessoryRectangulareSageWidgetView: View {
                         Image("icon_system_userInfo")
                             .resizable()
                             .frame(width: 36, height: 36)
-                        Text(LockScreenWidgetLocalizedString.pleaseLogin.localized)
+                        Text("TEST 123")
                             .font(.system(size: 9, weight: .regular))
                             .lineLimit(1)
                             .minimumScaleFactor(0.1)
@@ -59,18 +59,18 @@ struct AccessoryRectangulareSageWidgetView: View {
                                             .foregroundColor(.white)
                                             .font(.system(size: 12, weight: .bold))
                                             .minimumScaleFactor(0.1)
-                                        Text(LockScreenWidgetLocalizedString.yen.localized)
+                                        Text("TEST 123")
                                             .foregroundColor(.white)
                                             .font(.system(size: 12, weight: .bold))
                                             .minimumScaleFactor(0.1)
                                     }
 
-                                    UpdateDateText(date: viewModel.displayDate, format: LockScreenWidgetLocalizedString.updateDateFormat.localized)
+                                    UpdateDateText(date: viewModel.displayDate)
                                         .minimumScaleFactor(0.1)
                                 }
                             }
                         } else {
-                            Text(LockScreenWidgetLocalizedString.tapToPay.localized)
+                            Text("TAP TO PLAY")
                                 .font(.system(size: 12, weight: .bold))
                                 .lineLimit(1)
                                 .minimumScaleFactor(0.1)

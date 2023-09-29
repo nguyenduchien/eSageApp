@@ -1,13 +1,13 @@
 //
-//  DemoWidgetApp.swift
-//  DemoWidget
+//  SageWidgetApp.swift
+//  SageWidgetApp
 //
 //  Created by Hien Nguyen on 8/3/23.
 //
 
 import SwiftUI
 
-struct eSageWidgetApp: App {
+struct SageWidgetApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
