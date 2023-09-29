@@ -30,7 +30,6 @@
 		56C13327F2937DFEBD76ECDC /* appstore.png in Resources */ = {isa = PBXBuildFile; fileRef = EDB6BCF7238282EA4CEA1252 /* appstore.png */; };
 		5F8E50C2D6B404059081E290 /* DetectLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000F29524A9FA35BE16E0C9C /* DetectLabel.swift */; };
 		66119773F5FCF9A5DA0861F1 /* URL+BaseURLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = B069CBC8A903679275F01738 /* URL+BaseURLs.swift */; };
-		66B38E4C97DCCDCEF9286C7F /* Pods_eSageApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6229ED322BFA505BE4EC0F8 /* Pods_eSageApp.framework */; };
 		691B04C06C5125CFCA35EE41 /* TextAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC373A3A98D0CEC690B297A7 /* TextAttributes.swift */; };
 		70529387D4B81575A08AAC7A /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FDA3CD07EFE3A867A353C8 /* ProgressHUD.swift */; };
 		743C54A7B4F770492A6C442A /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118ABD15573A5AEA45FD09BC /* BaseTabBarController.swift */; };
@@ -62,18 +61,34 @@
 		D19766CF47A3B9C92D1E7C7B /* WidgetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FA3B6A5A21B02FB333D6C2 /* WidgetManager.swift */; };
 		D1E4517EE70C0B76D20C7B15 /* PushNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC086675A17CC361A0F6C389 /* PushNotificationManager.swift */; };
 		D5A02F9DC5BAED8D31B5A47C /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A902D27A999BC290A2D6939 /* UIColor+Extensions.swift */; };
+		D62C225ECDC0AEA91F87AC61 /* Pods_eSageApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 565DF58D2F372F09BFC31CAA /* Pods_eSageApp.framework */; };
 		E5321E40E363868CCD5CEFF4 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7FA604A822B30A91D29747 /* BaseNavigationController.swift */; };
 		E7A9D14EB17DD0F6BB36D286 /* PaddingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97F23F32E585BCBFBFF9440 /* PaddingTextField.swift */; };
 		EBE4760E89E3120B085BC940 /* Int+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F08DBEEE649570AD5516DA /* Int+Extensions.swift */; };
 		EE1E4D4F7CC5EF414BE69E61 /* AppLinkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680B4E35818B79028BA9D03C /* AppLinkManager.swift */; };
 		F2F2AB94D2C85770769BEF0B /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805BCB895B60755C30582C63 /* UIView+Extensions.swift */; };
+		F834CD882AC6BD090001EF72 /* SageWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = F834CD732AC6BD090001EF72 /* SageWidget.swift */; };
+		F834CD892AC6BD090001EF72 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F834CD742AC6BD090001EF72 /* Assets.xcassets */; };
+		F834CD8A2AC6BD090001EF72 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F834CD762AC6BD090001EF72 /* Preview Assets.xcassets */; };
+		F834CD8B2AC6BD090001EF72 /* SageWidgetLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = F834CD772AC6BD090001EF72 /* SageWidgetLiveActivity.swift */; };
+		F834CD8C2AC6BD090001EF72 /* WidgetState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F834CD792AC6BD090001EF72 /* WidgetState.swift */; };
+		F834CD8D2AC6BD090001EF72 /* WidgetSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = F834CD7A2AC6BD090001EF72 /* WidgetSize.swift */; };
+		F834CD8E2AC6BD090001EF72 /* SageWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F834CD7B2AC6BD090001EF72 /* SageWidgetBundle.swift */; };
+		F834CD8F2AC6BD090001EF72 /* SageWidgetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F834CD7C2AC6BD090001EF72 /* SageWidgetApp.swift */; };
+		F834CD902AC6BD090001EF72 /* SageWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = F834CD7D2AC6BD090001EF72 /* SageWidget.intentdefinition */; };
+		F834CD912AC6BD090001EF72 /* LockScreenWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = F834CD7F2AC6BD090001EF72 /* LockScreenWidget.swift */; };
+		F834CD922AC6BD090001EF72 /* LockScreenWidgetProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F834CD802AC6BD090001EF72 /* LockScreenWidgetProvider.swift */; };
+		F834CD932AC6BD090001EF72 /* AccessoryRectangularWidgetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F834CD812AC6BD090001EF72 /* AccessoryRectangularWidgetViewModel.swift */; };
+		F834CD942AC6BD090001EF72 /* LockScreenShortcutWidgetProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F834CD832AC6BD090001EF72 /* LockScreenShortcutWidgetProvider.swift */; };
+		F834CD952AC6BD090001EF72 /* AccessaryCircularBarcodeShortcutWidgetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F834CD842AC6BD090001EF72 /* AccessaryCircularBarcodeShortcutWidgetViewModel.swift */; };
+		F834CD962AC6BD090001EF72 /* LockScreenShortcutWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = F834CD852AC6BD090001EF72 /* LockScreenShortcutWidget.swift */; };
+		F834CD972AC6BD090001EF72 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F834CD862AC6BD090001EF72 /* ContentView.swift */; };
 		FD84A908BFE9F08A6D9599D8 /* playstore.png in Resources */ = {isa = PBXBuildFile; fileRef = E635D269904E1C7ED37626C7 /* playstore.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		000F29524A9FA35BE16E0C9C /* DetectLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectLabel.swift; sourceTree = "<group>"; };
 		02FDA3CD07EFE3A867A353C8 /* ProgressHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
-		0305A4525DAAAA19485EA1B8 /* Pods-eSageApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eSageApp.release.xcconfig"; path = "Target Support Files/Pods-eSageApp/Pods-eSageApp.release.xcconfig"; sourceTree = "<group>"; };
 		0830148A173C0E54E404BE79 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		0DD27A5F449A77C03AE4AD38 /* Measurement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Measurement.swift; sourceTree = "<group>"; };
 		118ABD15573A5AEA45FD09BC /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
@@ -83,7 +98,6 @@
 		1AC7DC2821E896E1B0D0F403 /* BaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		1C75D10C9DC21D405B48A5AE /* ParentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentView.swift; sourceTree = "<group>"; };
 		2EF73F028BCF1B671E9E4758 /* CameraPermissionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPermissionManager.swift; sourceTree = "<group>"; };
-		309AC16E3FCCFA99E07061E0 /* Pods-eSageApp.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eSageApp.staging.xcconfig"; path = "Target Support Files/Pods-eSageApp/Pods-eSageApp.staging.xcconfig"; sourceTree = "<group>"; };
 		3A683CBE69F387FCACABEBE2 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		3CF98CC81665216666639B71 /* GradientLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientLabel.swift; sourceTree = "<group>"; };
 		445FAA0095E66EECBA6A2B64 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -91,7 +105,9 @@
 		4EFA0AC3DD84ABADDDF43503 /* UIScreen+ScreenSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScreen+ScreenSize.swift"; sourceTree = "<group>"; };
 		4F7FA604A822B30A91D29747 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		50399827E3D99F25B7FA738B /* eSageApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = eSageApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5274333045F75E11338D2B26 /* Pods-eSageApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eSageApp.debug.xcconfig"; path = "Target Support Files/Pods-eSageApp/Pods-eSageApp.debug.xcconfig"; sourceTree = "<group>"; };
 		5550214C7C336D7D9FE01A94 /* BiometricsAuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricsAuthenticationManager.swift; sourceTree = "<group>"; };
+		565DF58D2F372F09BFC31CAA /* Pods_eSageApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_eSageApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		582FD5FD82739CA005C626E4 /* DisableCopyPasteTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisableCopyPasteTextField.swift; sourceTree = "<group>"; };
 		5C007DAF4FE7600C54AC3B7C /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		618C7506F1F1C307929AF39D /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -107,8 +123,8 @@
 		997D79EC64C1C9019862C3B7 /* eSageApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = eSageApp.entitlements; sourceTree = "<group>"; };
 		9A902D27A999BC290A2D6939 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		9DFCBBDD65639DB21A4443AC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		A16FAEBBD08E9A65140B803B /* Pods-eSageApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eSageApp.release.xcconfig"; path = "Target Support Files/Pods-eSageApp/Pods-eSageApp.release.xcconfig"; sourceTree = "<group>"; };
 		A21FCE29FBD07DC762A62CB7 /* XCAssets+Generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCAssets+Generated.swift"; sourceTree = "<group>"; };
-		A6229ED322BFA505BE4EC0F8 /* Pods_eSageApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_eSageApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADB30AE6BE1172109D06D757 /* eSageApp-Debug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "eSageApp-Debug.entitlements"; sourceTree = "<group>"; };
 		B06711C19AE3D60A3446964A /* AppManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppManager.swift; sourceTree = "<group>"; };
 		B069CBC8A903679275F01738 /* URL+BaseURLs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+BaseURLs.swift"; sourceTree = "<group>"; };
@@ -117,6 +133,7 @@
 		B6BD9417CD87B03E23EA6968 /* ToastHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastHUD.swift; sourceTree = "<group>"; };
 		BC86420137C10946B8D68F49 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		BF0C00EF1214CAED08791EF2 /* GradationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradationView.swift; sourceTree = "<group>"; };
+		C21038BBD86B504C0973C746 /* Pods-eSageApp.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eSageApp.staging.xcconfig"; path = "Target Support Files/Pods-eSageApp/Pods-eSageApp.staging.xcconfig"; sourceTree = "<group>"; };
 		C3D03FBAB6752A63A67896C4 /* BorderRadiusButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderRadiusButton.swift; sourceTree = "<group>"; };
 		C604189598C487CDC369C1CD /* App.DeviceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.DeviceType.swift; sourceTree = "<group>"; };
 		C671A92FE1F3283B3FFF7517 /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
@@ -136,21 +153,36 @@
 		F21A29CE63FAB2B011D078B6 /* CheckBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxView.swift; sourceTree = "<group>"; };
 		F28F7C50694C9603B05B9272 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		F6E610E250F469D303973E17 /* ContainerDialogSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerDialogSheet.swift; sourceTree = "<group>"; };
+		F834CD732AC6BD090001EF72 /* SageWidget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SageWidget.swift; sourceTree = "<group>"; };
+		F834CD742AC6BD090001EF72 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F834CD762AC6BD090001EF72 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F834CD772AC6BD090001EF72 /* SageWidgetLiveActivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SageWidgetLiveActivity.swift; sourceTree = "<group>"; };
+		F834CD792AC6BD090001EF72 /* WidgetState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WidgetState.swift; sourceTree = "<group>"; };
+		F834CD7A2AC6BD090001EF72 /* WidgetSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WidgetSize.swift; sourceTree = "<group>"; };
+		F834CD7B2AC6BD090001EF72 /* SageWidgetBundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SageWidgetBundle.swift; sourceTree = "<group>"; };
+		F834CD7C2AC6BD090001EF72 /* SageWidgetApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SageWidgetApp.swift; sourceTree = "<group>"; };
+		F834CD7D2AC6BD090001EF72 /* SageWidget.intentdefinition */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.intentdefinition; path = SageWidget.intentdefinition; sourceTree = "<group>"; };
+		F834CD7F2AC6BD090001EF72 /* LockScreenWidget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LockScreenWidget.swift; sourceTree = "<group>"; };
+		F834CD802AC6BD090001EF72 /* LockScreenWidgetProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LockScreenWidgetProvider.swift; sourceTree = "<group>"; };
+		F834CD812AC6BD090001EF72 /* AccessoryRectangularWidgetViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessoryRectangularWidgetViewModel.swift; sourceTree = "<group>"; };
+		F834CD832AC6BD090001EF72 /* LockScreenShortcutWidgetProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LockScreenShortcutWidgetProvider.swift; sourceTree = "<group>"; };
+		F834CD842AC6BD090001EF72 /* AccessaryCircularBarcodeShortcutWidgetViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessaryCircularBarcodeShortcutWidgetViewModel.swift; sourceTree = "<group>"; };
+		F834CD852AC6BD090001EF72 /* LockScreenShortcutWidget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LockScreenShortcutWidget.swift; sourceTree = "<group>"; };
+		F834CD862AC6BD090001EF72 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F8664460DABC189CAA51626D /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		F97F23F32E585BCBFBFF9440 /* PaddingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingTextField.swift; sourceTree = "<group>"; };
 		F9844482CC2F6A27DEF79B7F /* UserNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNotificationManager.swift; sourceTree = "<group>"; };
 		FBDABF82617688DE346D1F0E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FC373A3A98D0CEC690B297A7 /* TextAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAttributes.swift; sourceTree = "<group>"; };
 		FECC5095B9B780709A3FA189 /* TriangleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriangleView.swift; sourceTree = "<group>"; };
-		FF6577006E8E5AB73FE5C05E /* Pods-eSageApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eSageApp.debug.xcconfig"; path = "Target Support Files/Pods-eSageApp/Pods-eSageApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		B099C8B79BF7B0038D9EBE06 /* Frameworks */ = {
+		B832CF73DFA3F5E58932FCD0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				66B38E4C97DCCDCEF9286C7F /* Pods_eSageApp.framework in Frameworks */,
+				D62C225ECDC0AEA91F87AC61 /* Pods_eSageApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,10 +247,11 @@
 			isa = PBXGroup;
 			children = (
 				95B6ACA41C769DEAD3E80F67 /* App */,
+				F834CD722AC6BD090001EF72 /* SageWidget */,
 				8139966DF03796C934EB9FC8 /* xcconfig */,
 				4F802D7B0092667815602DD7 /* Products */,
-				D024FEE60DDBBF97FDF0D737 /* Pods */,
-				473F1FEC8634D2597CCDE5D4 /* Frameworks */,
+				D65943F6451979B2539CE641 /* Pods */,
+				A23A072B52836A8DA74154BC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -228,14 +261,6 @@
 				A21FCE29FBD07DC762A62CB7 /* XCAssets+Generated.swift */,
 			);
 			path = Generated;
-			sourceTree = "<group>";
-		};
-		473F1FEC8634D2597CCDE5D4 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				A6229ED322BFA505BE4EC0F8 /* Pods_eSageApp.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		4F802D7B0092667815602DD7 /* Products */ = {
@@ -343,6 +368,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		A23A072B52836A8DA74154BC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				565DF58D2F372F09BFC31CAA /* Pods_eSageApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C51F29E6A000D81CB8C8B361 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
@@ -353,12 +386,12 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
-		D024FEE60DDBBF97FDF0D737 /* Pods */ = {
+		D65943F6451979B2539CE641 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				FF6577006E8E5AB73FE5C05E /* Pods-eSageApp.debug.xcconfig */,
-				0305A4525DAAAA19485EA1B8 /* Pods-eSageApp.release.xcconfig */,
-				309AC16E3FCCFA99E07061E0 /* Pods-eSageApp.staging.xcconfig */,
+				5274333045F75E11338D2B26 /* Pods-eSageApp.debug.xcconfig */,
+				A16FAEBBD08E9A65140B803B /* Pods-eSageApp.release.xcconfig */,
+				C21038BBD86B504C0973C746 /* Pods-eSageApp.staging.xcconfig */,
 			);
 			name = Pods;
 			path = ../Pods;
@@ -419,6 +452,61 @@
 			path = Base;
 			sourceTree = "<group>";
 		};
+		F834CD722AC6BD090001EF72 /* SageWidget */ = {
+			isa = PBXGroup;
+			children = (
+				F834CD732AC6BD090001EF72 /* SageWidget.swift */,
+				F834CD742AC6BD090001EF72 /* Assets.xcassets */,
+				F834CD752AC6BD090001EF72 /* Preview Content */,
+				F834CD772AC6BD090001EF72 /* SageWidgetLiveActivity.swift */,
+				F834CD782AC6BD090001EF72 /* Model */,
+				F834CD7B2AC6BD090001EF72 /* SageWidgetBundle.swift */,
+				F834CD7C2AC6BD090001EF72 /* SageWidgetApp.swift */,
+				F834CD7D2AC6BD090001EF72 /* SageWidget.intentdefinition */,
+				F834CD7E2AC6BD090001EF72 /* LockScreenWidget */,
+				F834CD862AC6BD090001EF72 /* ContentView.swift */,
+			);
+			path = SageWidget;
+			sourceTree = "<group>";
+		};
+		F834CD752AC6BD090001EF72 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				F834CD762AC6BD090001EF72 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F834CD782AC6BD090001EF72 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F834CD792AC6BD090001EF72 /* WidgetState.swift */,
+				F834CD7A2AC6BD090001EF72 /* WidgetSize.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F834CD7E2AC6BD090001EF72 /* LockScreenWidget */ = {
+			isa = PBXGroup;
+			children = (
+				F834CD7F2AC6BD090001EF72 /* LockScreenWidget.swift */,
+				F834CD802AC6BD090001EF72 /* LockScreenWidgetProvider.swift */,
+				F834CD812AC6BD090001EF72 /* AccessoryRectangularWidgetViewModel.swift */,
+				F834CD822AC6BD090001EF72 /* LockScreenShortcutWidget */,
+			);
+			path = LockScreenWidget;
+			sourceTree = "<group>";
+		};
+		F834CD822AC6BD090001EF72 /* LockScreenShortcutWidget */ = {
+			isa = PBXGroup;
+			children = (
+				F834CD832AC6BD090001EF72 /* LockScreenShortcutWidgetProvider.swift */,
+				F834CD842AC6BD090001EF72 /* AccessaryCircularBarcodeShortcutWidgetViewModel.swift */,
+				F834CD852AC6BD090001EF72 /* LockScreenShortcutWidget.swift */,
+			);
+			path = LockScreenShortcutWidget;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -426,13 +514,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 94BC9F72AD92BECE5EAEF01B /* Build configuration list for PBXNativeTarget "eSageApp" */;
 			buildPhases = (
-				A06D130BA1D00672AB3A5FF7 /* [CP] Check Pods Manifest.lock */,
+				48F88E3B7230F4355A115986 /* [CP] Check Pods Manifest.lock */,
 				C47A881ED3DF770BA798D515 /* SwiftGen Run Script */,
 				D3034999138366CF1A2AD394 /* SwiftLint Run Script */,
 				B5C5D485CF47349A545DC56D /* Sources */,
 				08A2ADF94EAD8F713CDF81DA /* Resources */,
-				B099C8B79BF7B0038D9EBE06 /* Frameworks */,
-				CDBE03FD932F5D6DC8DC5BF8 /* [CP] Embed Pods Frameworks */,
+				B832CF73DFA3F5E58932FCD0 /* Frameworks */,
+				C9A3496F9499AE231818BFDA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -449,7 +537,7 @@
 		EB0EC5EB2020E0227CFCF008 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1420;
+				LastUpgradeCheck = 1200;
 				TargetAttributes = {
 					5ECD24C35C1D18325619AE69 = {
 						DevelopmentTeam = LQQPYJBXWS;
@@ -481,10 +569,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F834CD8A2AC6BD090001EF72 /* Preview Assets.xcassets in Resources */,
 				2CDCA61320948BB9009A6220 /* Assets.xcassets in Resources */,
 				B42D7954FBC37DA868BCEAB5 /* HomeViewController.xib in Resources */,
 				8BC2AB3CCB4583306E161802 /* LaunchScreen.storyboard in Resources */,
 				CC66A6B9231A93AC2DFAEB65 /* Localizable.strings in Resources */,
+				F834CD892AC6BD090001EF72 /* Assets.xcassets in Resources */,
 				56C13327F2937DFEBD76ECDC /* appstore.png in Resources */,
 				FD84A908BFE9F08A6D9599D8 /* playstore.png in Resources */,
 			);
@@ -493,7 +583,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		A06D130BA1D00672AB3A5FF7 /* [CP] Check Pods Manifest.lock */ = {
+		48F88E3B7230F4355A115986 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -533,7 +623,7 @@
 			shellPath = /bin/sh;
 			shellScript = "# https://github.com/SwiftGen/SwiftGen\n\nif [[ -f \"${PODS_ROOT}/SwiftGen/bin/swiftgen\" ]]; then\n  \"${PODS_ROOT}/SwiftGen/bin/swiftgen\" config run --config \"$SRCROOT/../SwiftGen.yml\"\nelse\n  echo \"warning: SwiftGen is not installed. Run 'pod install --repo-update' to install it.\"\nfi\n";
 		};
-		CDBE03FD932F5D6DC8DC5BF8 /* [CP] Embed Pods Frameworks */ = {
+		C9A3496F9499AE231818BFDA /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -580,8 +670,10 @@
 				2C34C09964C0529CD9B6E701 /* App.DeviceType.swift in Sources */,
 				A96292ACF873707A9B112080 /* App.Fonts.swift in Sources */,
 				8D4F8A41F8556BB03A2F45DC /* App.swift in Sources */,
+				F834CD912AC6BD090001EF72 /* LockScreenWidget.swift in Sources */,
 				91FED707B81A0DAFA5C1EC36 /* AppConfig.swift in Sources */,
 				CDB032DFF7D780C74799E49C /* AppDelegate.swift in Sources */,
+				F834CD942AC6BD090001EF72 /* LockScreenShortcutWidgetProvider.swift in Sources */,
 				EE1E4D4F7CC5EF414BE69E61 /* AppLinkManager.swift in Sources */,
 				41B7BEF5F7430BC255F52A17 /* AppManager.swift in Sources */,
 				A6DE27D685D7A95994BDF212 /* Array+Extension.swift in Sources */,
@@ -593,20 +685,30 @@
 				8DFCBFC0787A2FB1653E04E1 /* BorderRadiusButton.swift in Sources */,
 				C349B7F5275EDAAD70FC822E /* CameraPermissionManager.swift in Sources */,
 				BBEB39AF07BF4EAD88F8F755 /* CheckBoxView.swift in Sources */,
+				F834CD8F2AC6BD090001EF72 /* SageWidgetApp.swift in Sources */,
 				1EE04A57C78E74F1BE6C2C1E /* ContainerDialogSheet.swift in Sources */,
 				B5897A5D669054F250214A58 /* CustomView.swift in Sources */,
 				02F233BB318E1F81D5FD77E6 /* DataManager.swift in Sources */,
 				15B9367581E560C9EC113969 /* Date+Extensions.swift in Sources */,
 				5F8E50C2D6B404059081E290 /* DetectLabel.swift in Sources */,
+				F834CD932AC6BD090001EF72 /* AccessoryRectangularWidgetViewModel.swift in Sources */,
 				9C44064811B11616E9B70BD0 /* DisableCopyPasteTextField.swift in Sources */,
+				F834CD922AC6BD090001EF72 /* LockScreenWidgetProvider.swift in Sources */,
 				46F856C0504FB6150A58209C /* GradationView.swift in Sources */,
+				F834CD8B2AC6BD090001EF72 /* SageWidgetLiveActivity.swift in Sources */,
 				942DB1E2DF6B205A828B3B45 /* GradientLabel.swift in Sources */,
 				CC7CC89A27F5C88AF9EC9EC0 /* HomeViewController.swift in Sources */,
 				EBE4760E89E3120B085BC940 /* Int+Extensions.swift in Sources */,
+				F834CD8C2AC6BD090001EF72 /* WidgetState.swift in Sources */,
 				4BE33D16BFCF26F7061779E7 /* LoadingErrorView.swift in Sources */,
 				A4925DA60AEE690BDEB2AF4D /* LocationManager.swift in Sources */,
 				3F2C43F580658D2574B64347 /* Measurement.swift in Sources */,
+				F834CD882AC6BD090001EF72 /* SageWidget.swift in Sources */,
+				F834CD962AC6BD090001EF72 /* LockScreenShortcutWidget.swift in Sources */,
 				5326EF9B4AAAE9B896026D48 /* NoSelectTextView.swift in Sources */,
+				F834CD952AC6BD090001EF72 /* AccessaryCircularBarcodeShortcutWidgetViewModel.swift in Sources */,
+				F834CD8D2AC6BD090001EF72 /* WidgetSize.swift in Sources */,
+				F834CD902AC6BD090001EF72 /* SageWidget.intentdefinition in Sources */,
 				38A08DACD5F36C4B613A1020 /* PaddingLabel.swift in Sources */,
 				E7A9D14EB17DD0F6BB36D286 /* PaddingTextField.swift in Sources */,
 				CAE379207667A7872B652169 /* ParentView.swift in Sources */,
@@ -622,6 +724,7 @@
 				168CE356DAE6DE6121EE3A70 /* TriangleView.swift in Sources */,
 				D5A02F9DC5BAED8D31B5A47C /* UIColor+Extensions.swift in Sources */,
 				34A35ED86F0BC4A487D1DC82 /* UIImageView+Extensions.swift in Sources */,
+				F834CD972AC6BD090001EF72 /* ContentView.swift in Sources */,
 				B2B06E637D8C31EBD2223971 /* UILabel+Extensions.swift in Sources */,
 				ABA84ED033970C04A941221D /* UIScreen+ScreenSize.swift in Sources */,
 				F2F2AB94D2C85770769BEF0B /* UIView+Extensions.swift in Sources */,
@@ -630,6 +733,7 @@
 				2609754FD46C740DD308DC61 /* UserNotificationManager.swift in Sources */,
 				D19766CF47A3B9C92D1E7C7B /* WidgetManager.swift in Sources */,
 				277CFBE7B17C4C45A78632FA /* XCAssets+Generated.swift in Sources */,
+				F834CD8E2AC6BD090001EF72 /* SageWidgetBundle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -653,7 +757,6 @@
 			baseConfigurationReference = E3167BBD0C899836352DFD3B /* eSageApp-Staging.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -707,7 +810,6 @@
 			baseConfigurationReference = 6B82F21DAA3D9887BCB60EAF /* eSageApp-Debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -764,10 +866,11 @@
 		};
 		6F9397BB5634DBD6D47EBBAA /* Staging */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 309AC16E3FCCFA99E07061E0 /* Pods-eSageApp.staging.xcconfig */;
+			baseConfigurationReference = C21038BBD86B504C0973C746 /* Pods-eSageApp.staging.xcconfig */;
 			buildSettings = {
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				INFOPLIST_FILE = App/SupportingFiles/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				PRODUCT_BUNDLE_IDENTIFIER = hiennguyen.eSageApp;
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
@@ -776,13 +879,12 @@
 		};
 		774BC0313E6491B5783F1F1C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FF6577006E8E5AB73FE5C05E /* Pods-eSageApp.debug.xcconfig */;
+			baseConfigurationReference = 5274333045F75E11338D2B26 /* Pods-eSageApp.debug.xcconfig */;
 			buildSettings = {
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = LQQPYJBXWS;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				INFOPLIST_FILE = App/SupportingFiles/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				PRODUCT_BUNDLE_IDENTIFIER = hiennguyen.eSageApp;
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "match Development hiennguyen.eSageApp";
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
 			};
@@ -793,7 +895,6 @@
 			baseConfigurationReference = 6A55ABF957B40E6505DC27D6 /* eSageApp-Release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -845,13 +946,12 @@
 		};
 		A54575814A769DE7D5DD0628 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0305A4525DAAAA19485EA1B8 /* Pods-eSageApp.release.xcconfig */;
+			baseConfigurationReference = A16FAEBBD08E9A65140B803B /* Pods-eSageApp.release.xcconfig */;
 			buildSettings = {
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = LQQPYJBXWS;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				INFOPLIST_FILE = App/SupportingFiles/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				PRODUCT_BUNDLE_IDENTIFIER = hiennguyen.eSageApp;
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "match AppStore hiennguyen.eSageApp";
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
 			};

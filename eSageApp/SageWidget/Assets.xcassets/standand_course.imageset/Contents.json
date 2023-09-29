@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "standand_course.pdf",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
