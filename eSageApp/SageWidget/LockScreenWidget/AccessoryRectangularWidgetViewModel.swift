@@ -24,11 +24,9 @@ class AccessoryRectangulareSageWidgetViewModel {
         return "HAVE DATA"
     }
 
-
     var isPlaceHolder: Bool {
         return widgetState == .placeholder
     }
-
 
     var displayDate: Date {
         return lastUpdateDate

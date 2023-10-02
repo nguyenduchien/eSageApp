@@ -83,6 +83,12 @@
 		F834CD952AC6BD090001EF72 /* AccessaryCircularBarcodeShortcutWidgetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F834CD842AC6BD090001EF72 /* AccessaryCircularBarcodeShortcutWidgetViewModel.swift */; };
 		F834CD962AC6BD090001EF72 /* LockScreenShortcutWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = F834CD852AC6BD090001EF72 /* LockScreenShortcutWidget.swift */; };
 		F834CD972AC6BD090001EF72 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F834CD862AC6BD090001EF72 /* ContentView.swift */; };
+		F834CD9A2AC6C4BE0001EF72 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F834CD992AC6C4BE0001EF72 /* Info.plist */; };
+		F834CD9D2AC6C5B80001EF72 /* LockScreenWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = F834CD9C2AC6C5B80001EF72 /* LockScreenWidget.intentdefinition */; };
+		F834CDA32AC6C74E0001EF72 /* LineChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F834CDA22AC6C74E0001EF72 /* LineChartView.swift */; };
+		F834CDA52AC6C75B0001EF72 /* LineChartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F834CDA42AC6C75B0001EF72 /* LineChartViewModel.swift */; };
+		F834CDA72AC6C7B20001EF72 /* OTBWidgetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F834CDA62AC6C7B20001EF72 /* OTBWidgetViewModel.swift */; };
+		F834CDAA2AC6C80A0001EF72 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = F834CDA92AC6C80A0001EF72 /* Course.swift */; };
 		FD84A908BFE9F08A6D9599D8 /* playstore.png in Resources */ = {isa = PBXBuildFile; fileRef = E635D269904E1C7ED37626C7 /* playstore.png */; };
 /* End PBXBuildFile section */
 
@@ -169,6 +175,13 @@
 		F834CD842AC6BD090001EF72 /* AccessaryCircularBarcodeShortcutWidgetViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessaryCircularBarcodeShortcutWidgetViewModel.swift; sourceTree = "<group>"; };
 		F834CD852AC6BD090001EF72 /* LockScreenShortcutWidget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LockScreenShortcutWidget.swift; sourceTree = "<group>"; };
 		F834CD862AC6BD090001EF72 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F834CD992AC6C4BE0001EF72 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F834CD9B2AC6C4F60001EF72 /* SageWidgetsExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SageWidgetsExtension.entitlements; sourceTree = "<group>"; };
+		F834CD9C2AC6C5B80001EF72 /* LockScreenWidget.intentdefinition */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.intentdefinition; path = LockScreenWidget.intentdefinition; sourceTree = "<group>"; };
+		F834CDA22AC6C74E0001EF72 /* LineChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineChartView.swift; sourceTree = "<group>"; };
+		F834CDA42AC6C75B0001EF72 /* LineChartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineChartViewModel.swift; sourceTree = "<group>"; };
+		F834CDA62AC6C7B20001EF72 /* OTBWidgetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTBWidgetViewModel.swift; sourceTree = "<group>"; };
+		F834CDA92AC6C80A0001EF72 /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 		F8664460DABC189CAA51626D /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		F97F23F32E585BCBFBFF9440 /* PaddingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingTextField.swift; sourceTree = "<group>"; };
 		F9844482CC2F6A27DEF79B7F /* UserNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNotificationManager.swift; sourceTree = "<group>"; };
@@ -455,6 +468,9 @@
 		F834CD722AC6BD090001EF72 /* SageWidget */ = {
 			isa = PBXGroup;
 			children = (
+				F834CD9E2AC6C6B20001EF72 /* OTBWidget */,
+				F834CD992AC6C4BE0001EF72 /* Info.plist */,
+				F834CD9B2AC6C4F60001EF72 /* SageWidgetsExtension.entitlements */,
 				F834CD732AC6BD090001EF72 /* SageWidget.swift */,
 				F834CD742AC6BD090001EF72 /* Assets.xcassets */,
 				F834CD752AC6BD090001EF72 /* Preview Content */,
@@ -480,7 +496,6 @@
 		F834CD782AC6BD090001EF72 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				F834CD792AC6BD090001EF72 /* WidgetState.swift */,
 				F834CD7A2AC6BD090001EF72 /* WidgetSize.swift */,
 			);
 			path = Model;
@@ -489,6 +504,7 @@
 		F834CD7E2AC6BD090001EF72 /* LockScreenWidget */ = {
 			isa = PBXGroup;
 			children = (
+				F834CD9C2AC6C5B80001EF72 /* LockScreenWidget.intentdefinition */,
 				F834CD7F2AC6BD090001EF72 /* LockScreenWidget.swift */,
 				F834CD802AC6BD090001EF72 /* LockScreenWidgetProvider.swift */,
 				F834CD812AC6BD090001EF72 /* AccessoryRectangularWidgetViewModel.swift */,
@@ -505,6 +521,50 @@
 				F834CD852AC6BD090001EF72 /* LockScreenShortcutWidget.swift */,
 			);
 			path = LockScreenShortcutWidget;
+			sourceTree = "<group>";
+		};
+		F834CD9E2AC6C6B20001EF72 /* OTBWidget */ = {
+			isa = PBXGroup;
+			children = (
+				F834CDA82AC6C7EE0001EF72 /* ViewModel */,
+				F834CDA12AC6C7120001EF72 /* Chart */,
+				F834CDA02AC6C7010001EF72 /* Views */,
+				F834CD9F2AC6C6FC0001EF72 /* Model */,
+			);
+			path = OTBWidget;
+			sourceTree = "<group>";
+		};
+		F834CD9F2AC6C6FC0001EF72 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F834CD792AC6BD090001EF72 /* WidgetState.swift */,
+				F834CDA92AC6C80A0001EF72 /* Course.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F834CDA02AC6C7010001EF72 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F834CDA12AC6C7120001EF72 /* Chart */ = {
+			isa = PBXGroup;
+			children = (
+				F834CDA22AC6C74E0001EF72 /* LineChartView.swift */,
+				F834CDA42AC6C75B0001EF72 /* LineChartViewModel.swift */,
+			);
+			path = Chart;
+			sourceTree = "<group>";
+		};
+		F834CDA82AC6C7EE0001EF72 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F834CDA62AC6C7B20001EF72 /* OTBWidgetViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -571,6 +631,7 @@
 			files = (
 				F834CD8A2AC6BD090001EF72 /* Preview Assets.xcassets in Resources */,
 				2CDCA61320948BB9009A6220 /* Assets.xcassets in Resources */,
+				F834CD9A2AC6C4BE0001EF72 /* Info.plist in Resources */,
 				B42D7954FBC37DA868BCEAB5 /* HomeViewController.xib in Resources */,
 				8BC2AB3CCB4583306E161802 /* LaunchScreen.storyboard in Resources */,
 				CC66A6B9231A93AC2DFAEB65 /* Localizable.strings in Resources */,
@@ -666,6 +727,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F834CD9D2AC6C5B80001EF72 /* LockScreenWidget.intentdefinition in Sources */,
 				321B126F23637DBF06E2F174 /* App.Color.swift in Sources */,
 				2C34C09964C0529CD9B6E701 /* App.DeviceType.swift in Sources */,
 				A96292ACF873707A9B112080 /* App.Fonts.swift in Sources */,
@@ -689,6 +751,7 @@
 				1EE04A57C78E74F1BE6C2C1E /* ContainerDialogSheet.swift in Sources */,
 				B5897A5D669054F250214A58 /* CustomView.swift in Sources */,
 				02F233BB318E1F81D5FD77E6 /* DataManager.swift in Sources */,
+				F834CDA52AC6C75B0001EF72 /* LineChartViewModel.swift in Sources */,
 				15B9367581E560C9EC113969 /* Date+Extensions.swift in Sources */,
 				5F8E50C2D6B404059081E290 /* DetectLabel.swift in Sources */,
 				F834CD932AC6BD090001EF72 /* AccessoryRectangularWidgetViewModel.swift in Sources */,
@@ -696,6 +759,7 @@
 				F834CD922AC6BD090001EF72 /* LockScreenWidgetProvider.swift in Sources */,
 				46F856C0504FB6150A58209C /* GradationView.swift in Sources */,
 				F834CD8B2AC6BD090001EF72 /* SageWidgetLiveActivity.swift in Sources */,
+				F834CDA32AC6C74E0001EF72 /* LineChartView.swift in Sources */,
 				942DB1E2DF6B205A828B3B45 /* GradientLabel.swift in Sources */,
 				CC7CC89A27F5C88AF9EC9EC0 /* HomeViewController.swift in Sources */,
 				EBE4760E89E3120B085BC940 /* Int+Extensions.swift in Sources */,
@@ -719,6 +783,7 @@
 				B76810AE9766F0983C795269 /* RoundButton.swift in Sources */,
 				08D39F77B35D59F42AC10B5D /* SceneDelegate.swift in Sources */,
 				B17823EBE1AA609CAE3C0C7D /* String.swift in Sources */,
+				F834CDA72AC6C7B20001EF72 /* OTBWidgetViewModel.swift in Sources */,
 				691B04C06C5125CFCA35EE41 /* TextAttributes.swift in Sources */,
 				28C171D45FD7C9183FF535FC /* ToastHUD.swift in Sources */,
 				168CE356DAE6DE6121EE3A70 /* TriangleView.swift in Sources */,
@@ -730,6 +795,7 @@
 				F2F2AB94D2C85770769BEF0B /* UIView+Extensions.swift in Sources */,
 				66119773F5FCF9A5DA0861F1 /* URL+BaseURLs.swift in Sources */,
 				75B562D5F1C799FF3B7347EF /* UserDefaultKey.swift in Sources */,
+				F834CDAA2AC6C80A0001EF72 /* Course.swift in Sources */,
 				2609754FD46C740DD308DC61 /* UserNotificationManager.swift in Sources */,
 				D19766CF47A3B9C92D1E7C7B /* WidgetManager.swift in Sources */,
 				277CFBE7B17C4C45A78632FA /* XCAssets+Generated.swift in Sources */,
