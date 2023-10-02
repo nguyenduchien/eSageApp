@@ -84,7 +84,7 @@
 		F834CD962AC6BD090001EF72 /* LockScreenShortcutWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = F834CD852AC6BD090001EF72 /* LockScreenShortcutWidget.swift */; };
 		F834CD972AC6BD090001EF72 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F834CD862AC6BD090001EF72 /* ContentView.swift */; };
 		F834CD9A2AC6C4BE0001EF72 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F834CD992AC6C4BE0001EF72 /* Info.plist */; };
-		F834CD9D2AC6C5B80001EF72 /* LockScreenBalanceWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = F834CD9C2AC6C5B80001EF72 /* LockScreenBalanceWidget.intentdefinition */; };
+		F834CD9D2AC6C5B80001EF72 /* LockScreenWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = F834CD9C2AC6C5B80001EF72 /* LockScreenWidget.intentdefinition */; };
 		F834CDA32AC6C74E0001EF72 /* LineChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F834CDA22AC6C74E0001EF72 /* LineChartView.swift */; };
 		F834CDA52AC6C75B0001EF72 /* LineChartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F834CDA42AC6C75B0001EF72 /* LineChartViewModel.swift */; };
 		F834CDA72AC6C7B20001EF72 /* OTBWidgetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F834CDA62AC6C7B20001EF72 /* OTBWidgetViewModel.swift */; };
@@ -177,7 +177,7 @@
 		F834CD862AC6BD090001EF72 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F834CD992AC6C4BE0001EF72 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F834CD9B2AC6C4F60001EF72 /* SageWidgetsExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SageWidgetsExtension.entitlements; sourceTree = "<group>"; };
-		F834CD9C2AC6C5B80001EF72 /* LockScreenBalanceWidget.intentdefinition */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.intentdefinition; path = LockScreenBalanceWidget.intentdefinition; sourceTree = "<group>"; };
+		F834CD9C2AC6C5B80001EF72 /* LockScreenWidget.intentdefinition */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.intentdefinition; path = LockScreenWidget.intentdefinition; sourceTree = "<group>"; };
 		F834CDA22AC6C74E0001EF72 /* LineChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineChartView.swift; sourceTree = "<group>"; };
 		F834CDA42AC6C75B0001EF72 /* LineChartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineChartViewModel.swift; sourceTree = "<group>"; };
 		F834CDA62AC6C7B20001EF72 /* OTBWidgetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTBWidgetViewModel.swift; sourceTree = "<group>"; };
@@ -504,7 +504,7 @@
 		F834CD7E2AC6BD090001EF72 /* LockScreenWidget */ = {
 			isa = PBXGroup;
 			children = (
-				F834CD9C2AC6C5B80001EF72 /* LockScreenBalanceWidget.intentdefinition */,
+				F834CD9C2AC6C5B80001EF72 /* LockScreenWidget.intentdefinition */,
 				F834CD7F2AC6BD090001EF72 /* LockScreenWidget.swift */,
 				F834CD802AC6BD090001EF72 /* LockScreenWidgetProvider.swift */,
 				F834CD812AC6BD090001EF72 /* AccessoryRectangularWidgetViewModel.swift */,
@@ -727,7 +727,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F834CD9D2AC6C5B80001EF72 /* LockScreenBalanceWidget.intentdefinition in Sources */,
+				F834CD9D2AC6C5B80001EF72 /* LockScreenWidget.intentdefinition in Sources */,
 				321B126F23637DBF06E2F174 /* App.Color.swift in Sources */,
 				2C34C09964C0529CD9B6E701 /* App.DeviceType.swift in Sources */,
 				A96292ACF873707A9B112080 /* App.Fonts.swift in Sources */,
