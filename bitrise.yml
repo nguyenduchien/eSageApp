@@ -21,17 +21,42 @@ workflows:
             fi
         opts:
           is_template: true
-    - git-clone@6.1:
+    - git-clone@8: {}
         inputs:
         - commit: "$GIT_COMMIT"
         - clone_depth: '10'
-    # - xcodegen@0:
-    #     inputs:
-    #     - project_path: $BITRISE_SOURCE_DIR/eSageApp
-    #     - spec_path: $BITRISE_SOURCE_DIR/eSageApp/project_ci.yml
+    - xcodegen@0:
+        inputs:
+        - project_path: $BITRISE_SOURCE_DIR/eSageApp
+        - spec_path: $BITRISE_SOURCE_DIR/eSageApp/project_ci.yml
     - certificate-and-profile-installer@1.10.1: {}
+    - xcode-archive@4:
+        inputs:
+        - project_path: $BITRISE_PROJECT_PATH
+        - scheme: $BITRISE_SCHEME
+        - distribution_method: $BITRISE_DISTRIBUTION_METHOD
+        - automatic_code_signing: api-key
+        - cache_level: none
 
   _setup_dependencies:
+# steps: //Set up dependencies from Artifactor
+    # - authenticate-host-with-netrc@0:
+    #     inputs:
+    #     - username: "$JFROG_ARTIFACTORY_USERNAME"
+    #     - password: "$JFROG_ARTIFACTORY_KEY"
+    #     - host: eSage.jfrog.io
+    # - script@1:
+    #     inputs:
+    #     - content: |-
+    #         #!/usr/bin/env bash
+    #         # fail if any commands fails
+    #         set -e
+    #         # debug log
+    #         set -x
+
+    #         gem install cocoapods-art
+
+    #         pod repo-art add app-ios-local "https://eSage.jfrog.io/artifactory/api/pods/app-ios-local"
     steps:
     - cocoapods-install@1.10.0: {}
 
@@ -63,12 +88,12 @@ workflows:
   _post_on_ci_ch:
     steps:
     - create-install-page-qr-code@1.0.1: {}
-    - slack@3.1:
+    - slack@3.5.0:
         inputs:
         - channel: "#app-distribution"
         - pretext: "*Here's the iOS build:*"
-        - thumb_url: "BITRISE_PUBLIC_INSTALL_PAGE_QR_CODE_IMAGE_URL"
-        # - image_url: "$BITRISE_PUBLIC_INSTALL_PAGE_QR_CODE_IMAGE_URL"
+        # - thumb_url: "BITRISE_PUBLIC_INSTALL_PAGE_QR_CODE_IMAGE_URL"
+        - image_url: "$BITRISE_PUBLIC_INSTALL_PAGE_QR_CODE_IMAGE_URL"
         - emoji: ":quay:"
         - text: "$SLACK_MESSAGE"
         - webhook_url: "$SLACK_WEBHOOK_URL"
@@ -131,7 +156,130 @@ workflows:
     - _save_cache
     - _prepare_slack_message
     - _post_on_ci_ch
-    
+  
+  deploy_staging:
+    envs:
+    - BUILD_ENVIRONMENT: Staging
+    steps:
+    - script:
+        inputs:
+        - content: |
+            #!/bin/bash
+            gitHash=$(git rev-parse --short HEAD)
+            envman add --key GIT_HASH --value $gitHash
+    - recreate-user-schemes@1:
+        inputs:
+        - project_path: $BITRISE_PROJECT_PATH
+    - fastlane@3.4.2:
+        inputs:
+        - lane: update_app_version_suffix envName:stg bitriseBuildNumber:$BITRISE_BUILD_NUMBER
+            gitHash:$GIT_HASH
+        title: fastlane update version suffix
+    - fastlane@3.4.2:
+        inputs:
+        - lane: bitrise_build environment:Staging distribution_method:AdHoc
+        title: fastlane build
+    - deploy-to-bitrise-io@2.2:
+        inputs:
+        - deploy_path: "./eSageApp-AdHoc.ipa"
+    - deploy-to-bitrise-io@2.2:
+        title: Deploy to Bitrise.io - dSYM
+        inputs:
+        - deploy_path: "./eSageApp-AdHoc.app.dSYM.zip"
+    before_run:
+    - _initial_setup
+    - _load_cache
+    - _setup_dependencies
+    after_run:
+    - _save_cache
+    - _prepare_slack_message
+    - _post_on_ci_ch
+
+  update_tag_and_deploy_to_apple:
+    steps:
+    - fastlane@3.3.0:
+        inputs:
+        - lane: update_tag_and_github_release branch:$BITRISE_GIT_BRANCH
+        title: Update tag and Github release note
+    before_run:
+    - _initial_setup
+    after_run:
+    - deploy_to_apple
+
+  deploy_to_apple:
+    before_run:
+    - _notify_of_deploy_to_apple
+    - deploy_release
+    steps:
+    - deploy-to-itunesconnect-application-loader@1.4.0:
+        inputs:
+        - ipa_path: "./eSageApp.ipa"
+        - api_key_path: "$BITRISEIO_ASC_API_KEY_URL"
+        - api_issuer: "$ASC_API_KEY_ISSUER_ID"
+    - slack@3.1.3:
+        inputs:
+        - pretext: "@Mark *Upload to App Store is complete*"
+        - webhook_url: "$SLACK_WEBHOOK_URL"
+        - channel: "#app-distribution"
+
+  deploy_release:
+    steps:
+    - fastlane@2.7.0:
+        inputs:
+        - lane: bitrise_build environment:Release distribution_method:AppStore
+        title: fastlane build
+    - deploy-to-bitrise-io@2.1:
+        inputs:
+        - deploy_path: "./eSageApp.ipa"
+        - is_enable_public_page: 'false'
+        title: Deploy to Bitrise.io - IPA
+    - deploy-to-bitrise-io@2.1:
+        inputs:
+        - deploy_path: "./eSageApp.app.dSYM.zip"
+        - is_enable_public_page: 'false'
+        title: Deploy to Bitrise.io - dSYM
+    before_run:
+    - _initial_setup
+    - _load_cache
+    - _setup_dependencies
+    after_run:
+    - _save_cache
+    - _post_on_ci_ch 
+
+  _notify_of_deploy_to_apple:
+    steps:
+    - slack@3.1.3:
+        inputs:
+        - pretext: |-
+            @Mark deploy_to_apple build has started running. Please check the build here:
+            $BITRISE_BUILD_URL
+        - channel: "#app-distribution"
+        - webhook_url: "$SLACK_WEBHOOK_URL"
+
+  unit_test_and_danger:
+    steps:
+    - custom-test-results-export@0:
+        inputs:
+        - test_name: eSageAppStg
+        - search_pattern: "$BITRISE_SOURCE_DIR/fastlane/test_output/eSageAppStg.xcresult"
+    - deploy-to-bitrise-io@2.1: {}
+    - danger@2.0:
+        inputs:
+        - github_api_token: "$DANGER_GITHUB_API_TOKEN"
+    before_run:
+    - _initial_setup
+    - _load_cache
+    - _setup_dependencies
+
+  UpdateMasterVersion:
+    steps:
+    - fastlane@3.4.2:
+        inputs:
+        - lane: fastlane increase_version_minor
+    before_run:
+    - _initial_setup
+    - _load_cache
+    - _setup_dependencies
 
 meta:
   bitrise.io:
@@ -149,9 +297,15 @@ app:
   - opts:
       is_expand: false
     BITRISE_DISTRIBUTION_METHOD: ad-hoc
+  - opts:
+      is_expand: false
+    QA_SIMULATOR_IDENTITY: platform=iOS Simulator,name=iPhone 8 Plus,OS=14.5
+  - opts:
+      is_expand: false
+    FASTLANE_XCODE_LIST_TIMEOUT: '120'
 
-trigger_map:
+trigger_map: []
 - push_branch: test/bitrise/02
   workflow: build
 - pull_request_source_branch: '*'
-  workflow: build
+  workflow: unit_test_and_danger

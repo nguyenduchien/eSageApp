@@ -72,6 +72,13 @@ platform :ios do
         }
       }
     )
+
+    upload_firebase(
+      app: ENV["FIREBASE_APP_ID_DEV"], # Can setup on Info.plist on Local Source
+      groups: "dh-test"
+    )
+  
+    upload_deploygate
   end
 
   lane :update_provisioning_specifier do
@@ -116,6 +123,50 @@ platform :ios do
       config = environment
     end
     config
+  end
+
+
+  private_lane :upload_firebase do |options|
+    firebase_app_distribution(
+      app: "#{options[:app]}",
+      groups: "#{options[:groups]}",
+      release_notes_file: "./build/release_notes.txt",
+      firebase_cli_path: FIREBASE_CLI_PATH
+    )
+  end
+
+  private_lane :upload_deploygate do
+    File.open('../build/release_notes.txt').each do |line|
+        @releasenote = line
+        break
+    end
+    deploygate(
+      api_token: DEPLOYGATE_API_KEY,
+      user: DEPLOYGATE_USER,
+      ipa: lane_context[SharedValues::IPA_OUTPUT_PATH],
+      message: "#{@releasenote}"
+    )
+  end
+
+  lane :dev_lint do
+    swiftlint(
+      mode: :lint,
+      executable: "Pods/SwiftLint/swiftlint",
+      reporter: "html",
+      output_file: "fastlane/swiftlint-results.html",
+      config_file: '.swiftlint.yml',
+      ignore_exit_status: true)
+  end
+
+  lane :test_app_local do
+    scan(
+      scheme: 'eSageAppDev',
+      output_types: '',
+      device: 'iPhone 8 Plus',
+      fail_build: false,
+      code_coverage: true,
+      result_bundle: true
+    )
   end
 
   lane :bitrise_build do |options|
